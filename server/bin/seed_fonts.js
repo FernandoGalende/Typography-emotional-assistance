@@ -5,8 +5,8 @@ const dbURL = process.env.DBURL;
 
 
 const fonts = [{
-    name: Circular,
-    publisher: Lineto,
+    name: "Circular",
+    publisher: "Lineto",
     year: "2005",
     designer: "Laurenz Brunner",
     info: "LL Circular is a new take on a classic genre, first explored by Paul Rennerʼs Futura (1927–28). In the process of developing the font, the purely geometric approach gave way to more complex formal conception, resulting in a geometric sans serif marrying purity with warmth. Striking a balance between functionality, conceptual rigour, skilled workmanship and measured idiosyncrasy, LL Circular is a friendly sans serif text font with unmistakeable character yet universal appeal.",
@@ -107,6 +107,21 @@ const fonts = [{
       analytical: 0,
       confident: 0,
       tentative: 100
+    }
+  },
+  {
+    name: "Impact",
+    publisher: "ITC Image Club",
+    year: "1970",
+    designer: "Ronné Bonder, Tom Carnase",
+    info: "Designed by Geoffrey Lee. Stephenson Blake’s foundry version spans 3 styles, regular (1965), Condensed, and Outline (1967). At least the regular was also cast by Amsterdam. [Reichardt] Includes alternates for ‘r’ and ‘J’ [1977 specimen]. Unlike Monotype’s/Adobe’s, URW’s digital version includes the Condensed. In 2002, Geoffrey Lee added Impact Wide with italic.",
+    emotions: {
+      anger: 100,
+      fear: 100,
+      joy: 0,
+      analytical: 50,
+      confident: 100,
+      tentative: 0
     }
   },
 ];

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SessionService } from "../session.service";
+import { SessionService } from "../Services/session.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -11,7 +11,7 @@ export class AuthSignupComponent implements OnInit {
   username: string;
   password: string;
   name: string;
-  secret: string;
+  // secret: string;
 
   constructor(public session: SessionService, public router: Router) {}
 
@@ -21,7 +21,7 @@ export class AuthSignupComponent implements OnInit {
       username: this.username,
       password: this.password,
       name: this.name,
-      secret: this.secret
+      // secret: this.secret
     };
     this.session.signup(user).subscribe(() => this.router.navigate(["/"]));
   }

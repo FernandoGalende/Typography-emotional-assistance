@@ -5,7 +5,7 @@ const logger         = require("morgan");
 const cookieParser   = require("cookie-parser");
 const bodyParser     = require("body-parser");
 const cors           = require("cors");
-const authController = require("./routes/authController");
+const authController = require("./routes/api/authController");
 const session        = require("express-session");
 const passport       = require("passport");
 
@@ -16,7 +16,7 @@ require("./config/passport")(passport);
 
 // Mongoose configuration
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/angular-authentication");
+mongoose.connect("mongodb://localhost/hg-project");
 
 const whitelist = [
   'http://localhost:4200',
@@ -32,12 +32,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 // Session
 app.use(session({
-  secret: "lab-angular-authentication",
+  secret: "hg-project",
   resave: true,
   saveUninitialized: true,
   cookie: { httpOnly: true, maxAge: 2419200000 }
 }));
-
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,9 +48,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+const Font = require('./models/font');
+
+app.use('/api/font', require('./routes/api/crud')(Font));
+
 app.use('/api', authController);
 app.all('/*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
+
 
 module.exports = app;

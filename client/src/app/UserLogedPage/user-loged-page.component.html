@@ -1,0 +1,15 @@
+<!-- <div *ngIf="!user">
+  <my-notlogged-component></my-notlogged-component>
+</div>
+ -->
+<div *ngIf="user">
+<p> XXXXXX</p>
+<p>User loged page works!!</p>
+<!-- <p>{{session.user.secret}}</p> -->
+<ul>
+  <li *ngFor="let e of question">     
+    <h1> Question: {{e.question}} </h1>
+    <!-- <a [routerLink]="['/threads',e._id]">Single Thread</a>  -->
+  </li>  
+</ul>
+</div>

@@ -4,8 +4,6 @@ const Schema   = mongoose.Schema;
 const fontSchema = new Schema({
   name: String,
   publisher: String,
-  name: String,
-  secret: String,
   year: String,
   designer: String,
   info: String,
@@ -16,10 +14,9 @@ const fontSchema = new Schema({
     analytical: Number,
     confident: Number,
     tentative: Number
-  }
- 
+  } 
 });
 
 
 const Font = mongoose.model("Font", fontSchema);
-module.exports = User;
+module.exports = Font;
