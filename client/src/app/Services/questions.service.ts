@@ -15,7 +15,7 @@ constructor(private http: Http) { }
 
 getQuestions() {
   return this.http
-    .get(`${BASEURL}/api/font`, this.options)
+    .get(`${BASEURL}/api/question`, this.options)
     .map((res: Response) => res.json());
 }
 }
