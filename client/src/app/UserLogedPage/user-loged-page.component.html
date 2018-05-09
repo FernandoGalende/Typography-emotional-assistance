@@ -3,13 +3,23 @@
 </div>
  -->
 <div *ngIf="user">
-<p> XXXXXX</p>
-<p>User loged page works!!</p>
-<!-- <p>{{session.user.secret}}</p> -->
-<ul>
-  <li *ngFor="let e of question">     
-    <h1> Question: {{e.question}} </h1>
-    <!-- <a [routerLink]="['/threads',e._id]">Single Thread</a>  -->
-  </li>  
-</ul>
+  <p> XXXXXX</p>
+  <p>User loged page works!!</p>
+  <!-- <p>{{session.user.secret}}</p> -->
+  <h1>New Thread</h1>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="info">¿Cómo te sientes hoy?</label>
+        <textarea name="info" [(ngModel)]="info"></textarea>
+      </div>
+      <button type="submit" (click)="getEmotion()">Submit watson</button>
+    </form>
+  </div>
+  <ul>
+    <li *ngFor="let e of question">
+      <p> Question: {{e.question}} </p>
+      <!-- <a [routerLink]="['/threads',e._id]">Single Thread</a>  -->
+    </li>
+  </ul>
 </div>

@@ -48,13 +48,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const Font = require('./models/font');
-const Question = require('./models/question');
 
-app.use('/api/font', require('./routes/api/crud')(Font));
-app.use('/api/question', require('./routes/api/crud')(Question));
+const index = require('./routes/api/index.controller')
 
-app.use('/api', authController);
+
+app.use('/api', index)
 app.all('/*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
