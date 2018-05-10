@@ -18,4 +18,8 @@ getQuestions() {
     .get(`${BASEURL}/api/question`, this.options)
     .map((res: Response) => res.json());
 }
+getAnswer(ans){
+  console.log(ans)
+
+}
 }

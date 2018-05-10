@@ -8,7 +8,7 @@ import { SessionService } from "./Services/session.service";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  title: string = "que ha pachaoo?";
+  title: string = "No estoy logueado";
   constructor(public session: SessionService) {
     this.session.userEvent.subscribe(user => {
       console.log("USER EVENT");
@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
         this.title = `HOLA ${user.username}`;
       } else {
         this.title = "PLIZ LOGIARSE!";
+        
       }
     });
   }

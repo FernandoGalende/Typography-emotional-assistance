@@ -3,6 +3,9 @@ import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
+import { Router } from "@angular/router";
+
+
 
 const BASEURL = "http://localhost:3000";
 
@@ -12,7 +15,7 @@ export class SessionService {
   userEvent: EventEmitter<any> =  new EventEmitter();
   options: any = { withCredentials: true };
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private router: Router) {
     this.isLogged().subscribe();
   }
 
@@ -43,8 +46,11 @@ export class SessionService {
 
   logout() {
     return this.http
-      .post(`${BASEURL}/api/logout`, this.options)
-      .map(() => this.handleUser())
+      .get(`${BASEURL}/api/logout`, this.options)
+      .map(res => {
+        console.log(res)
+        return this.handleUser()
+      })
       .catch(this.handleError);
   }
 
@@ -55,4 +61,5 @@ export class SessionService {
       .map(user => this.handleUser(user))
       .catch(this.handleError);
   }
+
 }

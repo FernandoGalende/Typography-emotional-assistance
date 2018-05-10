@@ -2,24 +2,53 @@
   <my-notlogged-component></my-notlogged-component>
 </div>
  -->
-<div *ngIf="user">
-  <p> XXXXXX</p>
-  <p>User loged page works!!</p>
-  <!-- <p>{{session.user.secret}}</p> -->
-  <h1>New Thread</h1>
+<div *ngIf="user&&questions">
   <div>
     <form>
       <div class="form-group">
-        <label for="info">¿Cómo te sientes hoy?</label>
-        <textarea name="info" [(ngModel)]="info"></textarea>
+        <label for="info">Tell me some words about your project, your feelings and your expresives intencions.</label>
+        <textarea name="info" [(ngModel)]="info" style="width: 100%; height: 100px;"></textarea>
       </div>
       <button type="submit" (click)="getEmotion()">Submit watson</button>
     </form>
   </div>
   <ul>
-    <li *ngFor="let e of question">
-      <p> Question: {{e.question}} </p>
-      <!-- <a [routerLink]="['/threads',e._id]">Single Thread</a>  -->
+    <li>
+      <p> {{questions[current].question}} </p>
+      <button type="submit" (click)="getAnswers('0')">answer A</button>
+      <button type="submit" (click)="getAnswers('0.25')">answer B</button>
+      <button type="submit" (click)="getAnswers('0.5')">answer C</button>
+      <button type="submit" (click)="getAnswers('0.75')">answer D</button>
+      <button type="submit" (click)="getAnswers('1')">answer E</button>
     </li>
   </ul>
+
+  <div *ngIf="watsonAnswer">
+    <h2>Answer</h2>
+    <div>
+      <h5>{{watsonAnswer.document_tone.tone_categories[0].tones[3].tone_name}}:</h5>
+      <p> {{watsonAnswer.document_tone.tone_categories[0].tones[3].score}} </p>
+    </div>
+    <div>
+      <h5>{{watsonAnswer.document_tone.tone_categories[0].tones[4].tone_name}}:</h5>
+      <p> {{watsonAnswer.document_tone.tone_categories[0].tones[4].score}} </p>
+    </div>
+    <div>
+      <h5>{{watsonAnswer.document_tone.tone_categories[1].tones[0].tone_name}}:</h5>
+      <p> {{watsonAnswer.document_tone.tone_categories[1].tones[0].score}} </p>
+    </div>
+    <div>
+      <h5>{{watsonAnswer.document_tone.tone_categories[1].tones[2].tone_name}}:</h5>
+      <p> {{watsonAnswer.document_tone.tone_categories[1].tones[2].score}} </p>
+    </div>
+    <div>
+      <h5>{{watsonAnswer.document_tone.tone_categories[2].tones[0].tone_name}}:</h5>
+      <p> {{watsonAnswer.document_tone.tone_categories[2].tones[0].score}} </p>
+    </div>
+    <div>
+      <h5>{{watsonAnswer.document_tone.tone_categories[2].tones[3].tone_name}}:</h5>
+      <p> {{watsonAnswer.document_tone.tone_categories[2].tones[3].score}} </p>
+    </div>
+  </div>
+  <button (click)="logout()">logout</button>
 </div>

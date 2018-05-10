@@ -5,9 +5,6 @@
   <a [routerLink]='["/login"]'><button>login show</button></a> 
   <a [routerLink]='["/signup"]'><button>signup show</button></a> 
 </div>
-<div *ngIf="this.session.user">
-<button (click)="session.logout().subscribe()">logout</button>
-</div>
 
 
 <router-outlet></router-outlet>
