@@ -18,7 +18,7 @@ export class UserLogedPage implements OnInit {
   user: any;
   info: string;
   watsonAnswer: any;
-  answers: Array<number>=[];
+  answers: Array<number> = [];
   current: number = 0;
   title: string;
   constructor(
@@ -28,7 +28,6 @@ export class UserLogedPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    ;
     this.session.isLogged().subscribe(u => (this.user = u));
     this.questionS.getQuestions().subscribe(data => {
       this.questions = data;
@@ -43,12 +42,10 @@ export class UserLogedPage implements OnInit {
   }
 
   getAnswers(ans) {
-    console.log(ans)
-    console.log(this.answers)
-     this.answers.push(ans);
+    this.answers.push(ans);
     if (this.answers.length === 5) {
       this.questionS.getAnswer(this.answers);
-    }else{
+    } else {
       this.current++;
     }
   }

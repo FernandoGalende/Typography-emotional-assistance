@@ -8,18 +8,21 @@ const BASEURL = "http://localhost:3000";
 
 @Injectable()
 export class QuestionsService {
-userEvent: EventEmitter<any> =  new EventEmitter();
-options: any = { withCredentials: true };
+  userEvent: EventEmitter<any> = new EventEmitter();
+  options: any = { withCredentials: true };
 
-constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-getQuestions() {
-  return this.http
-    .get(`${BASEURL}/api/question`, this.options)
+  getQuestions() {
+    return this.http
+      .get(`${BASEURL}/api/question`, this.options)
+      .map((res: Response) => res.json());
+  }
+  getAnswer(ans) {
+  
+    var total = ans.reduce(function(a, b){ return Number.parseFloat(a) + Number.parseFloat(b); });    
+    return this.http
+    .post(`${BASEURL}/api/question`,this.options, total)
     .map((res: Response) => res.json());
-}
-getAnswer(ans){
-  console.log(ans)
-
-}
+  }
 }
