@@ -43,8 +43,9 @@ export class UserLogedPage implements OnInit {
 
   getAnswers(ans) {
     this.answers.push(ans);
-    if (this.answers.length === 5) {
-      this.questionS.getAnswer(this.answers);
+    console.log(this.questions.length)
+    if (this.answers.length === this.questions.length) {
+      this.questionS.getAnswer(this.answers, this.watsonAnswer);
     } else {
       this.current++;
     }

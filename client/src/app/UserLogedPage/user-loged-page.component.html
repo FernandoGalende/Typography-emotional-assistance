@@ -24,31 +24,31 @@
   </ul>
 
   <div *ngIf="watsonAnswer">
-    <h2>Answer</h2>
-    <div>
-      <h5>{{watsonAnswer.document_tone.tone_categories[0].tones[3].tone_name}}:</h5>
-      <p> {{watsonAnswer.document_tone.tone_categories[0].tones[3].score}} </p>
+      <h2>Answer</h2>
+      <div>
+        <h5>Anger:</h5>
+        <p> {{watsonAnswer.anger}} </p>
+      </div>
+      <div>
+          <h5>fear:</h5>
+          <p> {{watsonAnswer.fear}} </p>
+      </div>
+      <div>
+          <h5>Joy:</h5>
+          <p> {{watsonAnswer.joy}} </p>
+      </div>
+      <div>
+          <h5>Analytical:</h5>
+          <p> {{watsonAnswer.analytical}} </p>
+      </div>
+      <div>
+          <h5>Confident:</h5>
+          <p> {{watsonAnswer.confident}} </p>
+      </div>
+      <div>
+          <h5>Tentative:</h5>
+          <p> {{watsonAnswer.tentative}} </p>
+      </div>
     </div>
-    <div>
-      <h5>{{watsonAnswer.document_tone.tone_categories[0].tones[4].tone_name}}:</h5>
-      <p> {{watsonAnswer.document_tone.tone_categories[0].tones[4].score}} </p>
-    </div>
-    <div>
-      <h5>{{watsonAnswer.document_tone.tone_categories[1].tones[0].tone_name}}:</h5>
-      <p> {{watsonAnswer.document_tone.tone_categories[1].tones[0].score}} </p>
-    </div>
-    <div>
-      <h5>{{watsonAnswer.document_tone.tone_categories[1].tones[2].tone_name}}:</h5>
-      <p> {{watsonAnswer.document_tone.tone_categories[1].tones[2].score}} </p>
-    </div>
-    <div>
-      <h5>{{watsonAnswer.document_tone.tone_categories[2].tones[0].tone_name}}:</h5>
-      <p> {{watsonAnswer.document_tone.tone_categories[2].tones[0].score}} </p>
-    </div>
-    <div>
-      <h5>{{watsonAnswer.document_tone.tone_categories[2].tones[3].tone_name}}:</h5>
-      <p> {{watsonAnswer.document_tone.tone_categories[2].tones[3].score}} </p>
-    </div>
-  </div>
   <button (click)="logout()">logout</button>
 </div>
