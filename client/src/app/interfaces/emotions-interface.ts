@@ -1,6 +1,4 @@
-export interface Answer {
-  username: string,
-  emotions: {  
+export interface Emotion {
     anger: Number,
     fear: Number,
     joy: Number,
@@ -8,4 +6,4 @@ export interface Answer {
     confident: Number,
     tentative: Number
   } 
-}
+
