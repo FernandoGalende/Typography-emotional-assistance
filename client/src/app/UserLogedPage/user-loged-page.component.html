@@ -12,16 +12,18 @@
       <button type="submit" (click)="getEmotion()">Submit watson</button>
     </form>
   </div>
-  <ul>
-    <li>
-      <p> {{questions[current].question}} </p>
-      <button type="submit" (click)="getAnswers(0)">answer A</button>
-      <button type="submit" (click)="getAnswers(0.25)">answer B</button>
-      <button type="submit" (click)="getAnswers(0.5)">answer C</button>
-      <button type="submit" (click)="getAnswers(0.75)">answer D</button>
-      <button type="submit" (click)="getAnswers(1)">answer E</button>
-    </li>
-  </ul>
+  <div *ngIf="watsonAnswer">
+    <ul>
+      <li>
+        <p> {{questions[current].question}} </p>
+        <button type="submit" (click)="getAnswers(0)">answer A</button>
+        <button type="submit" (click)="getAnswers(0.25)">answer B</button>
+        <button type="submit" (click)="getAnswers(0.5)">answer C</button>
+        <button type="submit" (click)="getAnswers(0.75)">answer D</button>
+        <button type="submit" (click)="getAnswers(1)">answer E</button>
+      </li>
+    </ul>
+  </div>
 
   <div *ngIf="watsonAnswer&&answers">
       <h2>Answer</h2>

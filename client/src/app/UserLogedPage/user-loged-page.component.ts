@@ -18,10 +18,17 @@ export class UserLogedPage implements OnInit {
   questions: Array<QuestionInterface>;
   user: any;
   info: string;
-  watsonAnswer: any;
-  answers: Array<number> = [];
+  watsonAnswer: Emotion = {
+      anger: 0,
+      fear: 0,
+      joy: 0,
+      analytical: 0,
+      confident: 0,
+      tentative: 0  
+   };
+  formAnswer: Array<number> = [];
   current: number = 0;
-  title: string;
+  title: String;
   userEmotion: Emotion = {
       anger: 0,
       fear: 0,
@@ -45,27 +52,27 @@ export class UserLogedPage implements OnInit {
 
   getEmotion() {
     this.watsonS.getEmotion(this.info).subscribe(data => {
-      this.watsonAnswer = data;
+      this.watsonAnswer.anger = data.anger;
+      this.watsonAnswer.fear = data.fear;
+      this.watsonAnswer.joy = data.joy;
+      this.watsonAnswer.analytical = data.analytical;
+      this.watsonAnswer.confident = data.confident;
+      this.watsonAnswer.tentative = data.tentative;      
     });
   }
 
   getAnswers(ans) {   
     console.log(this.current)
-    this.answers.push(ans);
-    console.log(this.answers)
-    if ((this.answers.length === this.questions.length)&&(this.watsonAnswer)) { 
-      this.userEmotion.anger = this.answers[0] + this.watsonAnswer.anger;      
-      this.userEmotion.fear = ans[1] + this.watsonAnswer.fear;
-      this.userEmotion.joy = ans[2] + this.watsonAnswer.joy;
-      this.userEmotion.analytical = ans[3] + this.watsonAnswer.analytical;
-      this.userEmotion.confident = ans[4] + this.watsonAnswer.confident;
-      this.userEmotion.tentative = ans[5] + this.watsonAnswer.tentative;
-      console.log("watsonUna--->");
-      console.log(this.watsonAnswer.joy)
-      console.log("watson--->");
-      console.log(this.watsonAnswer)
-      console.log("sumados--->");
-      console.log(this.userEmotion)      
+    this.formAnswer.push(ans);
+    console.log(this.formAnswer)
+    if ((this.formAnswer.length === this.questions.length)&&(this.watsonAnswer)) { 
+      this.userEmotion.anger = this.formAnswer[0] + Number(this.watsonAnswer.anger);      
+      this.userEmotion.fear = this.formAnswer[0] + Number(this.watsonAnswer.fear);
+      this.userEmotion.joy = this.formAnswer[0] + Number(this.watsonAnswer.joy);
+      this.userEmotion.analytical = this.formAnswer[0] + Number(this.watsonAnswer.analytical);
+      this.userEmotion.confident = this.formAnswer[0]+ Number(this.watsonAnswer.confident);
+      this.userEmotion.tentative = this.formAnswer[0] + Number(this.watsonAnswer.tentative);
+         
       let res = Object.keys(this.userEmotion).find(k=>this.userEmotion[k]===Math.max(...Object.keys(this.userEmotion).map(k=>this.userEmotion[k])))
       console.log("resultado--->");
       console.log(res);
