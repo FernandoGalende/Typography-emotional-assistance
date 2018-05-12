@@ -23,11 +23,11 @@
     </li>
   </ul>
 
-  <div *ngIf="watsonAnswer">
+  <div *ngIf="watsonAnswer&&answers">
       <h2>Answer</h2>
       <div>
         <h5>Anger:</h5>
-        <p> {{watsonAnswer.anger}} </p>
+        <p> {{watsonAnswer.anger}}</p>
       </div>
       <div>
           <h5>fear:</h5>

@@ -42,7 +42,7 @@ export class UserLogedPage implements OnInit {
   }
 
   getAnswers(ans) {
-    this.answers.push(ans);
+    this.answers.push(Number(ans));
     console.log(this.questions.length)
     if (this.answers.length === this.questions.length) {
       this.questionS.getAnswer(this.answers, this.watsonAnswer);
