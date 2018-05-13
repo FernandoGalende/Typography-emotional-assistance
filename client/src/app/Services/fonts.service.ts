@@ -9,16 +9,14 @@ const BASEURL = "http://localhost:3000";
 
 @Injectable()
 export class FontsService {
-  userEvent: EventEmitter<any> =  new EventEmitter();
+  userEvent: EventEmitter<any> = new EventEmitter();
   options: any = { withCredentials: true };
 
-constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-getFonts() {
-  return this.http
-    .get(`${BASEURL}/api/font`, this.options)
-    .map((res: Response) => res.json());
+  getFonts() {
+    return this.http
+      .get(`${BASEURL}/api/font`, this.options)
+      .map((res: Response) => res.json());
+  }
 }
-
-}
-

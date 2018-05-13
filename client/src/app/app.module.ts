@@ -10,14 +10,16 @@ import { AppComponent } from './app.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { UserLogedPage } from './UserLogedPage/user-loged-page.component';
+import { SingleFontComponent } from './SingleFont/SingleFont.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLoginComponent,
     AuthSignupComponent,
-    UserLogedPage
-  ],
+    UserLogedPage,
+    SingleFontComponent
+],
   imports: [
     BrowserModule,
     FormsModule,

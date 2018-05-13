@@ -8,7 +8,7 @@ const fontSchema = new Schema({
   designer: String,
   info: String,
   emotions: {  
-    ange: Number,
+    anger: Number,
     fear: Number,
     joy: Number,
     analytical: Number,

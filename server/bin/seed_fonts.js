@@ -13,10 +13,10 @@ const fonts = [{
     emotions: {
       anger: 0,
       fear: 0,
-      joy: 100,
-      analytical: 50,
-      confident: 50,
-      tentative: 25
+      joy: 1,
+      analytical: 0.75,
+      confident: 0,
+      tentative: 0
     }
   },
   {
@@ -26,11 +26,11 @@ const fonts = [{
     designer: "André Gürtler, Christian Mengelt, Erich Gschwind",
     info: "For many years a digital version of Unica was available from Scangraphic (and Elsner+Flake, 4 weights plus italics) but it was pulled from the market due to a complaint by Linotype who claims the Haas rights. In 2008, Cornel Windlin did a Semibold for the the Schauspielhaus Zürich identity, used in 2009–10. Later, Louise Paradis created a revival named Unica Intermediate while doing research for the TM retrospective. Toshi Omagari created another digital version and extension released by Linotype as Neue Haas Unica (9 weights plus italics). The first style, Ultra Light Italic arrived in 2014, the others apeared on MyFonts on March 18, 2015. Meanwhile, Lineto worked with the original designers and Maurice Göldner to release LL Unica77 (7 weights plus italics) on March 7, 2015.",
     emotions: {
-      anger: 75,
-      fear: 75,
+      anger: 0,
+      fear: 0,
       joy: 0,
-      analytical: 100,
-      confident: 100,
+      analytical: 1,
+      confident: 0.75,
       tentative: 0
     }
   },
@@ -43,10 +43,10 @@ const fonts = [{
     emotions: {
       anger: 0,
       fear: 0,
-      joy: 100,
-      analytical: 50,
-      confident: 50,
-      tentative: 75
+      joy: 0,
+      analytical: 1,
+      confident: 0.75,
+      tentative: 0
     }
   },
   {
@@ -58,12 +58,13 @@ const fonts = [{
     emotions: {
       anger: 0,
       fear: 0,
-      joy: 100,
-      analytical: 25,
+      joy: 1,
+      analytical: 0,
       confident: 0,
-      tentative: 75
+      tentative: 0.75
     }
-  },
+  },  
+
   {
     name: "ITC Bernase Roman",
     publisher: "ITC Image Club",
@@ -71,42 +72,12 @@ const fonts = [{
     designer: "Ronné Bonder, Tom Carnase",
     info: "A film typeface that came with several alternates (C, G, H, M, R, a, y). The sample shows the digital version by Image Club Graphics, Inc. from 1992 (spacing adjusted).",
     emotions: {
-      anger: 100,
-      fear: 100,
-      joy: 100,
+      anger: 0.75,
+      fear: 1,
+      joy: 0,
       analytical: 0,
       confident: 0,
-      tentative: 100
-    }
-  },
-  {
-    name: "Bauer Bodoni",
-    publisher: "Bauer Bauer Types, URW++",
-    year: "1926",
-    designer: "Heinrich Jost, Giambattista Bodoni, Louis Hoell",
-    info: "This revival of Bodoni’s types was made under the direction of Heinrich Jost. Punches were cut by Louis Hoell. The first two weights with italics were released in 1926–27. Bauer added a fett in 1952 and a Kursiv fett in 1955. [Reichardt]",
-    emotions: {
-      anger: 0,
-      fear: 0,
-      joy: 50,
-      analytical: 50,
-      confident: 50,
-      tentative: 25
-    }
-  },
-  {
-    name: "ITC Bernase Roman",
-    publisher: "ITC Image Club",
-    year: "1970",
-    designer: "Ronné Bonder, Tom Carnase",
-    info: "A film typeface that came with several alternates (C, G, H, M, R, a, y). The sample shows the digital version by Image Club Graphics, Inc. from 1992 (spacing adjusted).",
-    emotions: {
-      anger: 100,
-      fear: 100,
-      joy: 100,
-      analytical: 0,
-      confident: 0,
-      tentative: 100
+      tentative: 0
     }
   },
   {
@@ -114,13 +85,13 @@ const fonts = [{
     publisher: "ITC Image Club",
     year: "1970",
     designer: "Ronné Bonder, Tom Carnase",
-    info: "Designed by Geoffrey Lee. Stephenson Blake’s foundry version spans 3 styles, regular (1965), Condensed, and Outline (1967). At least the regular was also cast by Amsterdam. [Reichardt] Includes alternates for ‘r’ and ‘J’ [1977 specimen]. Unlike Monotype’s/Adobe’s, URW’s digital version includes the Condensed. In 2002, Geoffrey Lee added Impact Wide with italic.",
+    info: "Designed by Geoffrey Lee. Stephenson Blake’s foundry version spans 3 styles, regular (1965), Condensed, and Outline (1967). At least the regular was also cast by Amsterdam. Includes alternates for ‘r’ and ‘J’, 1977 specimen. Unlike Monotype’s/Adobe’s, URW’s digital version includes the Condensed. In 2002, Geoffrey Lee added Impact Wide with italic.",
     emotions: {
-      anger: 100,
-      fear: 100,
+      anger: 0,
+      fear: 0,
       joy: 0,
-      analytical: 50,
-      confident: 100,
+      analytical: 0.75,
+      confident: 1,
       tentative: 0
     }
   },

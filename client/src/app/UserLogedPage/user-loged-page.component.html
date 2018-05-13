@@ -12,7 +12,7 @@
       <button type="submit" (click)="getEmotion()">Submit watson</button>
     </form>
   </div>
-  <div *ngIf="watsonAnswer">
+  <div>
     <ul>
       <li>
         <p> {{questions[current].question}} </p>
@@ -25,32 +25,37 @@
     </ul>
   </div>
 
-  <div *ngIf="watsonAnswer&&answers">
-      <h2>Answer</h2>
-      <div>
-        <h5>Anger:</h5>
-        <p> {{watsonAnswer.anger}}</p>
-      </div>
-      <div>
-          <h5>fear:</h5>
-          <p> {{watsonAnswer.fear}} </p>
-      </div>
-      <div>
-          <h5>Joy:</h5>
-          <p> {{watsonAnswer.joy}} </p>
-      </div>
-      <div>
-          <h5>Analytical:</h5>
-          <p> {{watsonAnswer.analytical}} </p>
-      </div>
-      <div>
-          <h5>Confident:</h5>
-          <p> {{watsonAnswer.confident}} </p>
-      </div>
-      <div>
-          <h5>Tentative:</h5>
-          <p> {{watsonAnswer.tentative}} </p>
-      </div>
+  <div *ngIf="this.formAnswer.length===this.questions.length">
+    <h1>I would recommend first {{this.suitedArray[0][0]}} fontface</h1>
+    <h1>I would recommend second {{this.suitedArray[1][0]}} fontface</h1>
+
+    <div>
+      <h5>Anger:</h5>
+      <p> {{this.userEmotion.anger}}</p>
     </div>
+    <div>
+      <h5>fear:</h5>
+      <p> {{this.userEmotion.fear}}</p>
+    </div>
+    <div>
+      <h5>Joy:</h5>
+      <p> {{this.userEmotion.joy}}</p>
+    </div>
+    <div>
+      <h5>Analytical:</h5>
+      <p> {{this.userEmotion.analytical}}</p>
+    </div>
+    <div>
+      <h5>Confident:</h5>
+      <p> {{this.userEmotion.confident}}</p>
+    </div>
+    <div>
+      <h5>Tentative:</h5>
+      <p> {{this.userEmotion.tentative}} </p>
+    </div>
+    <a [routerLink]="['/font']">show me a font</a>
+
+  </div>
+
   <button (click)="logout()">logout</button>
 </div>

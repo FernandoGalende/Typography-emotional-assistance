@@ -5,6 +5,10 @@ import { WatsonService } from "../Services/watson.service";
 import { Observable } from "rxjs/Rx";
 import { QuestionInterface } from "../interfaces/question-interface";
 import { Emotion } from "../interfaces/emotions-interface";
+import { FontsService } from "../Services/fonts.service";
+import { FontInterface } from "../interfaces/font-Interface";
+let _ = require('lodash');
+
 
 const BASEURL = "http://localhost:3000";
 
@@ -12,7 +16,7 @@ const BASEURL = "http://localhost:3000";
   selector: "app-user-loged-page",
   templateUrl: "./user-loged-page.component.html",
   styleUrls: ["./user-loged-page.component.css"],
-  providers: [QuestionsService, SessionService, WatsonService]
+  providers: [QuestionsService, SessionService, WatsonService,FontsService]
 })
 export class UserLogedPage implements OnInit {
   questions: Array<QuestionInterface>;
@@ -37,10 +41,13 @@ export class UserLogedPage implements OnInit {
       confident: 0,
       tentative: 0    
   };
+  fonts: object = {}
+  suitedArray: Array<any>=[];
   constructor(
     public session: SessionService,
     public questionS: QuestionsService,
-    private watsonS: WatsonService
+    private watsonS: WatsonService,
+    private fontS: FontsService
   ) {}
 
   ngOnInit() {
@@ -48,6 +55,8 @@ export class UserLogedPage implements OnInit {
     this.questionS.getQuestions().subscribe(data => {
       this.questions = data;
     });
+    this.fontS.getFonts()
+    .subscribe((data) => this.fonts = data)
   }
 
   getEmotion() {
@@ -59,26 +68,55 @@ export class UserLogedPage implements OnInit {
       this.watsonAnswer.confident = data.confident;
       this.watsonAnswer.tentative = data.tentative;      
     });
+    console.log(this.watsonAnswer)
   }
 
-  getAnswers(ans) {   
-    console.log(this.current)
+  getAnswers(ans) { 
+    console.log(ans)  
     this.formAnswer.push(ans);
     console.log(this.formAnswer)
     if ((this.formAnswer.length === this.questions.length)&&(this.watsonAnswer)) { 
-      this.userEmotion.anger = this.formAnswer[0] + Number(this.watsonAnswer.anger);      
-      this.userEmotion.fear = this.formAnswer[0] + Number(this.watsonAnswer.fear);
-      this.userEmotion.joy = this.formAnswer[0] + Number(this.watsonAnswer.joy);
-      this.userEmotion.analytical = this.formAnswer[0] + Number(this.watsonAnswer.analytical);
-      this.userEmotion.confident = this.formAnswer[0]+ Number(this.watsonAnswer.confident);
-      this.userEmotion.tentative = this.formAnswer[0] + Number(this.watsonAnswer.tentative);
-         
-      let res = Object.keys(this.userEmotion).find(k=>this.userEmotion[k]===Math.max(...Object.keys(this.userEmotion).map(k=>this.userEmotion[k])))
-      console.log("resultado--->");
-      console.log(res);
+      this.userEmotion.anger = (this.formAnswer[0] + Number(this.watsonAnswer.anger))/2;      
+      this.userEmotion.fear = (this.formAnswer[1] + Number(this.watsonAnswer.fear))/2;
+      this.userEmotion.joy = (this.formAnswer[2] + Number(this.watsonAnswer.joy))/2;
+      this.userEmotion.analytical = (this.formAnswer[3] + Number(this.watsonAnswer.analytical))/2;
+      this.userEmotion.confident = (this.formAnswer[4]+ Number(this.watsonAnswer.confident))/2;
+      this.userEmotion.tentative = (this.formAnswer[5] + Number(this.watsonAnswer.tentative))/2;  
+      console.log("termino la asignacion de preguntas") 
+      console.log(this.formAnswer[5])
+      console.log(this.userEmotion)
+      this.mostSuitedFont(this.userEmotion);   
     } else {
       this.current++;
+    }    
+  }
+  currentEmotion(emotions){
+    var myArray = [];
+    for (var key in emotions){
+      myArray.push([key,emotions[key]])
     }
+    myArray = myArray.sort((a,b)=>{
+      return b[1] - a[1];
+    })
+    return myArray[0][0]
+  }
+  mostSuitedFont(userEmotion){
+    var myEmotion = this.currentEmotion(userEmotion);
+    
+    for (var key in this.fonts){
+      for (var item in this.fonts[key].emotions){
+        if(item === myEmotion){
+          this.suitedArray.push([this.fonts[key].name,this.fonts[key].emotions[item]])
+        }
+      }
+    }
+    this.suitedArray = this.suitedArray .sort((a,b)=>{
+      return b[1] - a[1];
+    })
+    console.log(this.suitedArray )
+    console.log(`For a project which feels ${myEmotion} , I would recommend first ${this.suitedArray[0][0]}`)
+    console.log(`For a project which feels ${myEmotion} , I would recommend second ${this.suitedArray[1][0]}`)
+    return this.suitedArray [0][0]
   }
 
   logout() {

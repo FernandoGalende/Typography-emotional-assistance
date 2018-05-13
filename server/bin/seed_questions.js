@@ -5,40 +5,35 @@ const dbURL = process.env.DBURL;
 
 
 const questions = [{
-  question: "Tell me some word about your project, your feelings and your expresives intencions",
-  items: "http...watson",
-  emotion: "All"
-  },
-  {
-  question: "Your project should end up something similar to one of this arquitecural type?",
+  question: "1.Anger: Your project should end up something similar to one of this arquitecural type?",
   items: ["https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg","https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg","https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg"],
   emotion: "anger"
   },
   {
-  question: "What sound represents better your intencional expresive?",
+  question: "2.Fear: What sound represents better your intencional expresive?",
   items: ["./assets/Audio/3.mp3","./assets/Audio/3.mp3","./assets/Audio/3.mp3"],
   emotion: "fear",
   },
   {
-   question: "Please, choose one or more concepts to represent better?",
+   question: "3.Joy: Please, choose one or more concepts to represent better?",
    items: ["Jump", "Jump", "Jump", "Jump"],
    emotion: "joy",
   },
   {
-  question: "Please, choose one or more concepts to represent better?",
-  items: ["Retador","Diferencial","Lider","Clasico","Moderno"],
-  emotion: "analytical",
+  question: "4.Analytical: what kind of politic newspaper represente better?",
+  items:["Retador","Diferencial","Lider","Clasico","Moderno"],
+  emotion: "Analytical",
   },
   {
-  question: "what kind of politic newspaper represente better?",
-  items:["Retador","Diferencial","Lider","Clasico","Moderno"],
+  question: "5.Confident: What art represents better your project?",
+  items: ["Retador","Diferencial","Lider","Clasico","Moderno"],
   emotion: "confident",
   },
   {
-  question: "What sound represents better your intencional expresive?",
+  question: "6.Tentative: Who much sexy shoul be your proyect?",
   items: ["Retador","Diferencial","Lider","Clasico","Moderno"],
   emotion: "tentative",
-  }  
+  }   
 ];
 
 mongoose
