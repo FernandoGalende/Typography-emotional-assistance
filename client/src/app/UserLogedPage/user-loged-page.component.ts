@@ -43,6 +43,7 @@ export class UserLogedPage implements OnInit {
   };
   fonts: object = {}
   suitedArray: Array<any>=[];
+  idFont: string;
   constructor(
     public session: SessionService,
     public questionS: QuestionsService,
@@ -106,7 +107,7 @@ export class UserLogedPage implements OnInit {
     for (var key in this.fonts){
       for (var item in this.fonts[key].emotions){
         if(item === myEmotion){
-          this.suitedArray.push([this.fonts[key].name,this.fonts[key].emotions[item]])
+          this.suitedArray.push([this.fonts[key].name,this.fonts[key]._id,this.fonts[key].emotions[item]])
         }
       }
     }
@@ -116,7 +117,9 @@ export class UserLogedPage implements OnInit {
     console.log(this.suitedArray )
     console.log(`For a project which feels ${myEmotion} , I would recommend first ${this.suitedArray[0][0]}`)
     console.log(`For a project which feels ${myEmotion} , I would recommend second ${this.suitedArray[1][0]}`)
-    return this.suitedArray [0][0]
+    console.log(this.suitedArray[0][1])
+    this.idFont = this.suitedArray[0][1]
+    this.fontS.getFont(this.suitedArray[0][0]) 
   }
 
   logout() {

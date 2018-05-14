@@ -5,7 +5,7 @@ const dbURL = process.env.DBURL;
 
 
 const fonts = [{
-    name: "Circular",
+    name: "ll-circular",
     publisher: "Lineto",
     year: "2005",
     designer: "Laurenz Brunner",
@@ -20,7 +20,7 @@ const fonts = [{
     }
   },
   {
-    name: "Unica Haas",
+    name: "haas-unica",
     publisher: "Haas",
     year: "1974-1984",
     designer: "André Gürtler, Christian Mengelt, Erich Gschwind",
@@ -35,7 +35,7 @@ const fonts = [{
     }
   },
   {
-    name: "Lyon",
+    name: "lyon",
     publisher: "Commercial Type",
     year: "2010",
     designer: "Kai Bernau",
@@ -50,7 +50,7 @@ const fonts = [{
     }
   },
   {
-    name: "Acta",
+    name: "acta-poster",
     publisher: "DSType",
     year: "2010",
     designer: "Dino dos Santos",
@@ -66,7 +66,7 @@ const fonts = [{
   },  
 
   {
-    name: "ITC Bernase Roman",
+    name: "itc-bernase-roman",
     publisher: "ITC Image Club",
     year: "1970",
     designer: "Ronné Bonder, Tom Carnase",
@@ -81,7 +81,7 @@ const fonts = [{
     }
   },
   {
-    name: "Impact",
+    name: "impact",
     publisher: "ITC Image Club",
     year: "1970",
     designer: "Ronné Bonder, Tom Carnase",

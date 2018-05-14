@@ -6,6 +6,7 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
@@ -18,7 +19,7 @@
     "lodash": "^4.17.10",
     "mongo-client": "^0.2.1",
     "mongodb": "^2.2.24",
-    "mongoose": "^4.13.12",
+    "mongoose": "^5.1.0",
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",

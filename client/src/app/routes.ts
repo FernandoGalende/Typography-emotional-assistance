@@ -9,7 +9,6 @@ export const routes: Routes = [
   {path: '', component: UserLogedPage },
   {path: 'signup', component: AuthSignupComponent},
   {path: 'login', component: AuthLoginComponent},
-  {path: 'font', component: SingleFontComponent},
-
+  {path: "font/:id", component: SingleFontComponent }
 ];
 
