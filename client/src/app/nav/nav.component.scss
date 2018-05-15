@@ -1,0 +1,39 @@
+nav{
+  margin: 0;
+  padding:0%;
+  height: auto;
+  width: 100%; 
+  color: white;
+  border-bottom: 1px solid white; 
+  box-sizing: border-box;
+  padding: 1%;
+  display: flex;  
+  background-color: black;
+
+  .nav-logo{
+    width: 50%;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 40px;
+    h1{
+      font-size: 60px;
+    }
+
+
+  }
+  .nav-auth{
+    width:50%;
+    text-align: center;
+    display: flex;
+    box-sizing: border-box;
+    padding: 1%;
+    
+    .nav-auth__login{
+      width: 50%;
+    }
+    .nav-auth__signup{
+      width: 50%;
+    }
+
+  }
+}

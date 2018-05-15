@@ -1,18 +1,16 @@
-<p>AuthSignupComponent works!</p>
 
-<h1> Authentication Sample </h1>
+<p> Signup </p>
 <form>
-  <h2> Signup </h2>
   <label> Username </label>
   <input type="text" [(ngModel)]="username" name="username"/>
   <br>
   <label> Password </label>
   <input type="password" [(ngModel)]="password" name="password"/>
-  <label> Name </label>
+  <br>
+  <label> Kind of person </label>
   <input type="text" [(ngModel)]="name" name="name"/>
 
-
-  <div style="padding-top:30px">
+  <div style="padding-top:10px">
     <button (click)="signup()"> signup </button>
   </div>
 </form>

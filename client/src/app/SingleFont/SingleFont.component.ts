@@ -9,8 +9,7 @@ import { FontInUseService } from "./../Services/fontInUse.service";
 @Component({
   selector: "app-SingleFont",
   templateUrl: "./SingleFont.component.html",
-  styleUrls: ["./SingleFont.component.css"],
-  providers: [FontsService, SessionService, FontInUseService]
+  styleUrls: ["./SingleFont.component.scss"],
 })
 export class SingleFontComponent implements OnInit {
   font: any = {};

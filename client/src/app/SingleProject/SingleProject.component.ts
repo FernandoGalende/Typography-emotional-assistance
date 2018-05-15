@@ -9,8 +9,7 @@ import { FontInUseService } from "./../Services/fontInUse.service";
 @Component({
   selector: "app-SingleProject",
   templateUrl: "./SingleProject.component.html",
-  styleUrls: ["./SingleProject.component.css"],
-  providers: [FontsService, SessionService, FontInUseService]
+  styleUrls: ["./SingleProject.component.scss"],
 })
 export class SingleProjectComponent implements OnInit {
   case: any = {};

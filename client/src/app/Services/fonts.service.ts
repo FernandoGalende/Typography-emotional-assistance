@@ -21,7 +21,7 @@ export class FontsService {
   }
   getFont(id) {
     return this.http
-      .get(`${BASEURL}/api/font/${id}`)
+      .get(`${BASEURL}/api/font/${id}`, this.options)
       .map((res: Response) => res.json());
   }
 

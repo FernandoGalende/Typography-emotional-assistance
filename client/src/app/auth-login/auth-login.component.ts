@@ -1,21 +1,27 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { SessionService } from "../Services/session.service";
 import { Router } from "@angular/router"
+import { logging } from "selenium-webdriver";
 
 
 @Component({
   selector: "app-auth-login",
   templateUrl: "./auth-login.component.html",
-  styleUrls: ["./auth-login.component.css"]
+  styleUrls: ["./auth-login.component.scss"]
 })
 export class AuthLoginComponent implements OnInit {
   username: string;
   password: string;
+  @Output() loginEvent = new EventEmitter<string>();
+
   constructor(public session: SessionService, public router: Router) {}
 
-  ngOnInit() {}
-  login(){
-    this.session.login(this.username, this.password).subscribe(()=> this.router.navigate(["/"]));
+  ngOnInit() {
+  }
 
+  login(){
+    this.session.login(this.username, this.password).subscribe(user=>{
+      this.loginEvent.emit()
+    })
   }
 }

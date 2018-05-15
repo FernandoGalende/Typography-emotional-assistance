@@ -15,8 +15,7 @@ const BASEURL = "http://localhost:3000";
 @Component({
   selector: "app-user-loged-page",
   templateUrl: "./user-loged-page.component.html",
-  styleUrls: ["./user-loged-page.component.css"],
-  providers: [QuestionsService, SessionService, WatsonService,FontsService]
+  styleUrls: ["./user-loged-page.component.scss"],
 })
 export class UserLogedPage implements OnInit {
   questions: Array<QuestionInterface>;
@@ -125,9 +124,4 @@ export class UserLogedPage implements OnInit {
     this.fontS.getFont(this.suitedArray[0][0]) 
   }
 
-  logout() {
-    this.session.logout().subscribe(() => {
-      this.user = null;
-    });
-  }
 }

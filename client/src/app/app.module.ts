@@ -14,6 +14,13 @@ import { SingleFontComponent } from './SingleFont/SingleFont.component';
 import { SingleProjectComponent } from './SingleProject/SingleProject.component';
 import { NavComponent } from './nav/nav.component';
 
+import { QuestionsService } from "./Services/questions.service";
+import { WatsonService } from "./Services/watson.service";
+import { FontsService } from "./Services/fonts.service";
+import { FontInUseService } from "./Services/fontInUse.service";
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +29,7 @@ import { NavComponent } from './nav/nav.component';
     UserLogedPage,
     SingleFontComponent,
     SingleProjectComponent,
-    NavComponent
+    NavComponent  
 ],
   imports: [
     BrowserModule,
@@ -30,7 +37,7 @@ import { NavComponent } from './nav/nav.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService],
+  providers: [QuestionsService, SessionService, WatsonService, FontsService, FontInUseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

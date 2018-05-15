@@ -5,20 +5,10 @@ import { SessionService } from "./Services/session.service";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  title: string = "No estoy logueado";
-  constructor(public session: SessionService) {
-    this.session.userEvent.subscribe(user => {
-      console.log("USER EVENT");
-      if (user) {
-        this.title = `HOLA ${user.username}`;
-      } else {
-        this.title = "PLIZ LOGIARSE!";
-        
-      }
-    });
+  constructor() {
   }
   ngOnInit() {}
   

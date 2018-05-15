@@ -1,10 +1,14 @@
-<app-nav></app-nav>
+<header>
+    <app-nav></app-nav>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer>
 
-<div *ngIf="!this.session.user">
-  <a [routerLink]='["/login"]'><button>login show</button></a> 
-  <a [routerLink]='["/signup"]'><button>signup show</button></a> 
-</div>
+</footer>
 
 
-<router-outlet></router-outlet>
+
+
 

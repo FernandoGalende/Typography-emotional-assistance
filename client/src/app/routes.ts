@@ -12,6 +12,5 @@ export const routes: Routes = [
   {path: 'login', component: AuthLoginComponent},
   {path: "font/:id", component: SingleFontComponent },
   {path: "font/use/:id", component: SingleProjectComponent }
-
 ];
 

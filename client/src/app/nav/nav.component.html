@@ -1,3 +1,22 @@
-<section id="main">
- <p>nav is here</p>   {{title}}
-</section>
+<nav>
+  <div class="nav-logo">
+
+    <h1>a</h1>
+    <div *ngIf="user" >
+      <p>
+        Feel free {{user.username}}
+      </p>
+      <br>
+      <button (click)="logout()">logout</button>
+    </div>
+  </div>
+  <div *ngIf="!user" class="nav-auth">
+    <div class="nav-auth__login">
+      <app-auth-login (loginEvent)="refreshUser()"></app-auth-login>
+    </div>
+   
+    <div class="nav-auth__signup">
+      <app-auth-signup (signupEvent)="refreshUser()"></app-auth-signup>
+    </div>
+  </div>
+</nav>
