@@ -21,6 +21,7 @@ export class UserLogedPage implements OnInit {
   questions: Array<QuestionInterface>;
   user: any;
   info: string;
+  watsonIsAnswer: boolean = false;
   watsonAnswer: Emotion = {
       anger: 0,
       fear: 0,
@@ -60,6 +61,9 @@ export class UserLogedPage implements OnInit {
   }
 
   getEmotion() {
+    this.watsonIsAnswer = true;
+    console.log("Q-->")
+    console.log(this.questions)
     this.watsonS.getEmotion(this.info).subscribe(data => {
       this.watsonAnswer.anger = data.anger;
       this.watsonAnswer.fear = data.fear;

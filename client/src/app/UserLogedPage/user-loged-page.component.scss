@@ -1,0 +1,60 @@
+.textarea {
+  background-color: black;
+  color: white;
+  padding: 2%;
+  outline: none ;
+  border: 0px solid black;
+  box-shadow: 0;
+  text-align: center;
+  font-size: 100px;
+  line-height: 100px;
+  overflow:hidden;
+  height: auto;
+  margin-top:100px; 
+  resize: both;
+  
+  // overflow: auto;
+}
+.watson, .questions{
+  text-align: center;
+  font-size: 50px;
+  height: 100vh;
+  line-height: 50px;
+  padding: 10% 100px;
+  button{
+    color: white;
+    background-color: black;
+    font-family: arial;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top:100px;    
+  }
+}
+.line-1{
+  position: relative;
+  top: 50%;  
+  height: 100px;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+  blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
+

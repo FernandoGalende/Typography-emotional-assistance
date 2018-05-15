@@ -1,59 +1,28 @@
 <div *ngIf="user">
 
-<div *ngIf="user&&questions">
-  <div>
-    <form>
-      <div class="form-group">
-        <label for="info">Tell me some words about your project, your feelings and your expresives intencions.</label>
-        <textarea name="info" [(ngModel)]="info" style="width: 100%; height: 100px;"></textarea>
-      </div>
-      <button type="submit" (click)="getEmotion()">Submit watson</button>
-    </form>
+  <div *ngIf="user&&questions">
+    <div *ngIf="!watsonIsAnswer">
+      <form class="watson">
+        <div class="form-group">
+          <p class="line-1 anim-typewriter">Please, tell me some feelings about your project</p>
+          <textarea class="textarea" name="info" [(ngModel)]="info" style="width: 100%; height: 100px;" required autofocus></textarea>
+        </div>
+        <button type="submit" (click)="getEmotion()">Submit watson</button>
+      </form>
+    </div>
+    <div *ngIf="watsonIsAnswer" class="questions">
+      <p> {{questions[current].question}} </p>
+      <button type="submit" (click)="getAnswers(0)">answer A</button>
+      <button type="submit" (click)="getAnswers(0.25)">answer B</button>
+      <button type="submit" (click)="getAnswers(0.5)">answer C</button>
+      <button type="submit" (click)="getAnswers(0.75)">answer D</button>
+      <button type="submit" (click)="getAnswers(1)">answer E</button>
+    </div>
+    <div *ngIf="this.formAnswer.length===this.questions.length">
+      <h1>I would recommend first {{this.suitedArray[0][0]}} fontface</h1>
+      <h1>I would recommend second {{this.suitedArray[1][0]}} fontface</h1>
+      <a [routerLink]="['/font/', this.idFont]">show me a font</a>
+    </div>
   </div>
-  <div>
-    <ul>
-      <li>
-        <p> {{questions[current].question}} </p>
-        <button type="submit" (click)="getAnswers(0)">answer A</button>
-        <button type="submit" (click)="getAnswers(0.25)">answer B</button>
-        <button type="submit" (click)="getAnswers(0.5)">answer C</button>
-        <button type="submit" (click)="getAnswers(0.75)">answer D</button>
-        <button type="submit" (click)="getAnswers(1)">answer E</button>
-      </li>
-    </ul>
-  </div>
-
-  <div *ngIf="this.formAnswer.length===this.questions.length">
-    <h1>I would recommend first {{this.suitedArray[0][0]}} fontface</h1>
-    <h1>I would recommend second {{this.suitedArray[1][0]}} fontface</h1>
-
-    <div>
-      <h5>Anger:</h5>
-      <p> {{this.userEmotion.anger}}</p>
-    </div>
-    <div>
-      <h5>fear:</h5>
-      <p> {{this.userEmotion.fear}}</p>
-    </div>
-    <div>
-      <h5>Joy:</h5>
-      <p> {{this.userEmotion.joy}}</p>
-    </div>
-    <div>
-      <h5>Analytical:</h5>
-      <p> {{this.userEmotion.analytical}}</p>
-    </div>
-    <div>
-      <h5>Confident:</h5>
-      <p> {{this.userEmotion.confident}}</p>
-    </div>
-    <div>
-      <h5>Tentative:</h5>
-      <p> {{this.userEmotion.tentative}} </p>
-    </div>
-    <a [routerLink]="['/font/', this.idFont]">show me a font</a>
-
-  </div>  
-</div>
-<!-- <my-notlogged-component></my-notlogged-component> -->
+  <!-- <my-notlogged-component></my-notlogged-component> -->
 </div>
