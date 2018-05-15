@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express        = require("express");
 const path           = require("path");
 const favicon        = require("serve-favicon");
@@ -16,7 +17,7 @@ require("./config/passport")(passport);
 
 // Mongoose configuration
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/hg-project");
+mongoose.connect(process.env.DBURL);
 
 const whitelist = [
   'http://localhost:4200',
