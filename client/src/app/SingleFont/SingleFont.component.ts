@@ -22,13 +22,18 @@ export class SingleFontComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    
     this.route.params.subscribe(params => {
       this.fontS.getFont(params["id"]).subscribe(data1 => {
         console.log(data1);
         this.font = data1;
+        console.log("-->")
+        console.log(this.font)
         this.fontInUseS.getFontInUse(this.font.name).subscribe(data2 => {
           console.log(data2);
           this.fontUses = data2;
+          console.log("-->")
+          console.log(this.fontUses)
         });
       });
     });
