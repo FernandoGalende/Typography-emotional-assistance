@@ -1,7 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-  font-family: Arial, sans-serif;
+@font-face {
+  font-family: 'faro_trialdisplay_lucky';
+  src: url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff2') format('woff2'),
+       url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'faro_trialdisplay_sad';
+  src: url('../src/assets/fonts/faro-kit/farotrial-displaysad-webfont.woff2') format('woff2'),
+       url('../src/assets/fonts/faro-kit/farotrial-displaysad-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'faro_trialdisplay_lucky', Arial, sans-serif;
   margin: 0;
   background-color: black;
   color: white;
 }
+
+.show-form {
+  position: relative;
+  z-index: 9;
+}
+
+.fullscreen-hidden-form {
+  z-index: 8;
+  height: 0;
+  min-height: 0;
+  position: fixed;
+  width: 100%;
+  background: black;
+  border-bottom: 1px solid white;
+  overflow: hidden;
+  transition: all .3s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  &.form-visible {
+    min-height: 100vh;
+  }
+}
+

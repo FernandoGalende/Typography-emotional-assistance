@@ -6,10 +6,12 @@ import { SingleFontComponent } from './SingleFont/SingleFont.component';
 import { SingleProjectComponent } from './SingleProject/SingleProject.component';
 
 
+
 export const routes: Routes = [
   {path: '', component: UserLogedPage },
-  {path: 'signup', component: AuthSignupComponent},
-  {path: 'login', component: AuthLoginComponent},
+  // {path: 'signup', component: AuthSignupComponent},
+  // {path: 'login', component: AuthLoginComponent},
+  {path: "font/use", component: UserLogedPage },
   {path: "font/:id", component: SingleFontComponent },
   {path: "font/use/:id", component: SingleProjectComponent }
 ];

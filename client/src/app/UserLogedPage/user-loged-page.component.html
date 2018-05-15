@@ -1,7 +1,5 @@
-<!-- <div *ngIf="!user">
-  <my-notlogged-component></my-notlogged-component>
-</div>
- -->
+<div *ngIf="user">
+
 <div *ngIf="user&&questions">
   <div>
     <form>
@@ -55,7 +53,7 @@
     </div>
     <a [routerLink]="['/font/', this.idFont]">show me a font</a>
 
-  </div>
-
-  
+  </div>  
+</div>
+<!-- <my-notlogged-component></my-notlogged-component> -->
 </div>

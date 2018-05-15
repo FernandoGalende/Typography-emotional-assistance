@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { SessionService } from "./../Services/session.service";
 import { FontsService } from "../Services/fonts.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-nav",
@@ -10,7 +11,7 @@ import { FontsService } from "../Services/fonts.service";
 export class NavComponent implements OnInit {
   user: any;
   title: String;
-  constructor(public session: SessionService, private fontS: FontsService) {}
+  constructor(public session: SessionService, private fontS: FontsService, private router: Router) {}
 
   ngOnInit() {
     this.session.isLogged().subscribe(user => {
@@ -19,7 +20,7 @@ export class NavComponent implements OnInit {
       if (this.user) {
         this.title = `Feel free to express ${user.username}`;
       } else {
-        this.title = "I don`t now how are you";
+        this.router.navigate(['/']);
       }
     });
   }
@@ -33,6 +34,9 @@ export class NavComponent implements OnInit {
   logout() {
     this.session.logout().subscribe(() => {
       this.user = null;
+      this.router.navigate(['/']);
+
+      
     });
   }
 }

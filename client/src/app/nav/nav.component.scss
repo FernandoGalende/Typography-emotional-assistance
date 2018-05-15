@@ -9,31 +9,33 @@ nav{
   padding: 1%;
   display: flex;  
   background-color: black;
+  align-items: center;
 
   .nav-logo{
-    width: 50%;
+    width: 70%;
     text-align: left;
     box-sizing: border-box;
     padding-left: 40px;
     h1{
-      font-size: 60px;
+      font-size: 80px;
     }
-
-
   }
   .nav-auth{
     width:50%;
-    text-align: center;
+    text-align: right;
     display: flex;
     box-sizing: border-box;
     padding: 1%;
-    
+        
     .nav-auth__login{
-      width: 50%;
+      width: 30%;
     }
     .nav-auth__signup{
       width: 50%;
     }
+   .form-container{
+     width: 50px;
+   }
 
   }
 }

@@ -1,17 +1,15 @@
-
-<p> Signup </p>
-<form>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
-  <br>
-  <label> Kind of person </label>
-  <input type="text" [(ngModel)]="name" name="name"/>
-
-  <div style="padding-top:10px">
+<div class="form-container">
+  <small class="show-form" id="show-signup-btn">Signup</small>
+  <form class="fullscreen-hidden-form" id="signup-form">
+    <div>
+      <input type="text" [(ngModel)]="username" name="username" placeholder="User"/>
+    </div>
+    <div>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password"/>
+    </div>
+    <label> What Kind of person are you? </label>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Ironic" />
     <button (click)="signup()"> signup </button>
-  </div>
-</form>
-<p class="error"> {{ error }} </p>
+  </form>
+  <p class="error"> {{ error }} </p>
+</div>

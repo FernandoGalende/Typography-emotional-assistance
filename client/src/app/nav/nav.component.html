@@ -1,20 +1,16 @@
 <nav>
   <div class="nav-logo">
-
     <h1>a</h1>
-    <div *ngIf="user" >
-      <p>
-        Feel free {{user.username}}
-      </p>
-      <br>
-      <button (click)="logout()">logout</button>
-    </div>
+    <div *ngIf="user"></div>
+  </div>
+  <div *ngIf="user" class="nav-auth">
+    <button (click)="logout()">logout</button>
+    <p>Hi {{user.username}}!!</p>    
   </div>
   <div *ngIf="!user" class="nav-auth">
     <div class="nav-auth__login">
       <app-auth-login (loginEvent)="refreshUser()"></app-auth-login>
     </div>
-   
     <div class="nav-auth__signup">
       <app-auth-signup (signupEvent)="refreshUser()"></app-auth-signup>
     </div>

@@ -21,7 +21,9 @@ export class AuthLoginComponent implements OnInit {
 
   login(){
     this.session.login(this.username, this.password).subscribe(user=>{
-      this.loginEvent.emit()
+      this.loginEvent.emit();
+      this.router.navigate(['font/use']);
+
     })
   }
 }
