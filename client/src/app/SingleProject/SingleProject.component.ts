@@ -7,30 +7,24 @@ import { promised } from "q";
 import { FontInUseService } from "./../Services/fontInUse.service";
 
 @Component({
-  selector: "app-SingleFont",
-  templateUrl: "./SingleFont.component.html",
-  styleUrls: ["./SingleFont.component.css"],
+  selector: "app-SingleProject",
+  templateUrl: "./SingleProject.component.html",
+  styleUrls: ["./SingleProject.component.css"],
   providers: [FontsService, SessionService, FontInUseService]
 })
-export class SingleFontComponent implements OnInit {
-  font: any = {};
-  fontUses: any = {};
+export class SingleProjectComponent implements OnInit {
+  case: any = {};
 
   constructor(
     private route: ActivatedRoute,
-    private fontS: FontsService,
     private fontInUseS: FontInUseService
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.fontS.getFont(params["id"]).subscribe(data1 => {
-        console.log(data1);
-        this.font = data1;
-        this.fontInUseS.getFontInUse(this.font.name).subscribe(data2 => {
-          console.log(data2);
-          this.fontUses = data2;
-        });
+      this.fontInUseS.getOneUse(params["id"]).subscribe(data => {
+        console.log(data);
+        this.case = data;
       });
     });
   }

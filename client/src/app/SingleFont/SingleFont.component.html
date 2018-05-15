@@ -8,6 +8,8 @@
   <li *ngFor="let e of fontUses.data.uses"> 
     <h2> {{e.name}} </h2>
     <img src="{{e.thumb}}" alt="" width="200" height="auto">
+    <p>{{e.id}}</p>
+    <a [routerLink]="['/font/use', e.id]">show case in use</a>
   </li>  
 </ul>
 

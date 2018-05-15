@@ -11,6 +11,8 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { UserLogedPage } from './UserLogedPage/user-loged-page.component';
 import { SingleFontComponent } from './SingleFont/SingleFont.component';
+import { SingleProjectComponent } from './SingleProject/SingleProject.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SingleFontComponent } from './SingleFont/SingleFont.component';
     AuthLoginComponent,
     AuthSignupComponent,
     UserLogedPage,
-    SingleFontComponent
+    SingleFontComponent,
+    SingleProjectComponent,
+    NavComponent
 ],
   imports: [
     BrowserModule,

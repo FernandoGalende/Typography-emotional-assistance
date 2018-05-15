@@ -11,19 +11,22 @@ export class FontInUseService {
   userEvent: EventEmitter<any> = new EventEmitter();
   options: any = { withCredentials: true };
 
-constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-getFontInUse(info) {
-  console.log(info)
-  return this.http
-    .post(`${BASEURL}/api/uses`, { info }, this.options).map((res: Response) => {
-      console.log(res)
-      return res.json();
-    });
+  getFontInUse(info) {
+    console.log(info);
+    return this.http
+      .post(`${BASEURL}/api/uses`, { info }, this.options)
+      .map((res: Response) => {
+        console.log(res);
+        return res.json();
+      });
+  }
+  getOneUse(id) {
+    return this.http
+      .get(`${BASEURL}/api/uses/use/${id}`, this.options)
+      .map((res: Response) => {
+        return res.json();
+      });
+  }
 }
-
-}
-
-
-
-

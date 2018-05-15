@@ -1,6 +1,5 @@
-<section id="main">
-  {{title}}
-</section>
+<app-nav></app-nav>
+
 <div *ngIf="!this.session.user">
   <a [routerLink]='["/login"]'><button>login show</button></a> 
   <a [routerLink]='["/signup"]'><button>signup show</button></a> 

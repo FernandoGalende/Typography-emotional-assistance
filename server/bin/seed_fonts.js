@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const fontSchema = require('../models/font');
 const dbURL = process.env.DBURL;
 
-
 const fonts = [{
     name: "ll-circular",
     publisher: "Lineto",

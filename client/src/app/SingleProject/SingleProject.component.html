@@ -1,0 +1,18 @@
+<p>
+  SingleProject works!
+</p>
+
+<p>{{this.use.name}}</p>
+
+<ul>
+    <li *ngFor="let e of case.use"> 
+        <h2> {{e.name}} </h2>
+        <div>
+          <li *ngFor="let j of e.media_items"> 
+            <img src="{{j.src}}" alt="">   
+          </li>
+        </div>
+      <!-- <img src="{{e.thumb}}" alt="" width="200" height="auto">
+      <p>{{e.id}}</p> -->
+    </li>  
+  </ul>

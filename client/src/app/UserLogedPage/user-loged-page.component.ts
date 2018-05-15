@@ -111,9 +111,12 @@ export class UserLogedPage implements OnInit {
         }
       }
     }
-    this.suitedArray = this.suitedArray .sort((a,b)=>{
-      return b[1] - a[1];
+    console.log("antes del sort")
+    console.log(this.suitedArray)
+    this.suitedArray = this.suitedArray.sort((a,b)=>{
+      return b[2] - a[2];
     })
+    console.log("despues del sort")
     console.log(this.suitedArray )
     console.log(`For a project which feels ${myEmotion} , I would recommend first ${this.suitedArray[0][0]}`)
     console.log(`For a project which feels ${myEmotion} , I would recommend second ${this.suitedArray[1][0]}`)
