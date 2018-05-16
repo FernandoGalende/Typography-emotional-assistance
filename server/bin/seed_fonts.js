@@ -4,11 +4,11 @@ const fontSchema = require('../models/font');
 const dbURL = process.env.DBURL;
 
 const fonts = [{
-    name: "ll-circular",
+    name: "ll-brown",
     publisher: "Lineto",
-    year: "2005",
-    designer: "Laurenz Brunner",
-    info: "LL Circular is a new take on a classic genre, first explored by Paul Rennerʼs Futura (1927–28). In the process of developing the font, the purely geometric approach gave way to more complex formal conception, resulting in a geometric sans serif marrying purity with warmth. Striking a balance between functionality, conceptual rigour, skilled workmanship and measured idiosyncrasy, LL Circular is a friendly sans serif text font with unmistakeable character yet universal appeal.",
+    year: "2011",
+    designer: "Aurèle Sack",
+    info: "Evidently, LL Brown owes a lot to the type designs of both Edward Johnston and Arno Drescher, who with their Johnston and Super Grotesk each created immensely influential and successful geometric typefaces nearly one hundred years ago. Yet Aurèle Sack was not aiming at a revival font. Using the historic predecessors for formal cues, he kept developing his hybrid more freely, adding a similarly purist and technical flavour as in some of his earlier typefaces, most notably the Futura variant he drew as Omega's corporate typeface a few years back.",
     emotions: {
       anger: 0,
       fear: 0,
@@ -34,10 +34,10 @@ const fonts = [{
     }
   },
   {
-    name: "lyon",
-    publisher: "Commercial Type",
+    name: "ff-unit-slab",
+    publisher: "FontFont",
     year: "2010",
-    designer: "Kai Bernau",
+    designer: "Alexandra Korolkova, Christian Schwartz, Erik Spiekermann, Kris Sowersby, Olga Umpeleva, Panos Haratzopoulos",
     info: "Lyon Text Roman was the centerpiece of Kai Bernau's degree project at the Type + Media course at the Royal Academy of Art (KABK) in The Hague, but was extensively revised and expanded before its debut in the New York Times Magazine in 2009. Like many of the great seriffed typefaces it draws intelligently from the work of Robert Granjon, the master of the Renaissance, while having a contemporary feel. Its elegant looks are matched with an intelligent, anonymous nature, making it excellent for magazines, book and newspapers.",
     emotions: {
       anger: 0,
@@ -49,27 +49,27 @@ const fonts = [{
     }
   },
   {
-    name: "acta-poster",
-    publisher: "DSType",
-    year: "2010",
-    designer: "Dino dos Santos",
-    info: "First designed for chilean newspaper La Tercera in 2010, Acta family is a clean and fresh type system, while enough conservative for newspaper setting. The complete Acta Type System contains Acta, Acta Deck, Acta Headline and Acta Display both with six weights with matching italics; Acta Symbols with an amazing collection of symbols specially designed for newspapers and magazines and Acta Poster, a heavyweight version, elegant and eye catching in three styles with plenty of ligatures and alternates.",
+    name: "bauer-bodoni",
+    publisher: "URW++",
+    year: "1926",
+    designer: "Heinrich Jost, Giambattista Bodoni, Louis Hoell",
+    info: "This revival of Bodoni’s types was made under the direction of Heinrich Jost. Punches were cut by Louis Hoell. The first two weights with italics were released in 1926–27. Bauer added a fett in 1952 and a Kursiv fett in 1955.",
     emotions: {
       anger: 0,
       fear: 0,
-      joy: 1,
+      joy: 0.75,
       analytical: 0,
       confident: 0,
-      tentative: 0.75
+      tentative: 1
     }
   },  
 
   {
-    name: "itc-bernase-roman",
-    publisher: "ITC Image Club",
-    year: "1970",
-    designer: "Ronné Bonder, Tom Carnase",
-    info: "A film typeface that came with several alternates (C, G, H, M, R, a, y). The sample shows the digital version by Image Club Graphics, Inc. from 1992 (spacing adjusted).",
+    name: "harbour",
+    publisher: "Alias",
+    year: "1998",
+    designer: "Gareth Hague",
+    info: "Harbour is a clash of Latin and Germanic typestyles - two conflicting letterforms, culturally, politically and aesthetically. Latin letterforms have a geometric base, blackletter types are calligraphic. Harbour takes calligraphic forms that derive from writing with quills, but is a typeface that is clearly drawn‚ rather than written‚ to produce graphic, dynamic letterforms.",
     emotions: {
       anger: 0.75,
       fear: 1,
@@ -86,11 +86,11 @@ const fonts = [{
     designer: "Ronné Bonder, Tom Carnase",
     info: "Designed by Geoffrey Lee. Stephenson Blake’s foundry version spans 3 styles, regular (1965), Condensed, and Outline (1967). At least the regular was also cast by Amsterdam. Includes alternates for ‘r’ and ‘J’, 1977 specimen. Unlike Monotype’s/Adobe’s, URW’s digital version includes the Condensed. In 2002, Geoffrey Lee added Impact Wide with italic.",
     emotions: {
-      anger: 0,
+      anger: 1,
       fear: 0,
       joy: 0,
       analytical: 0.75,
-      confident: 1,
+      confident: 0.5,
       tentative: 0
     }
   },

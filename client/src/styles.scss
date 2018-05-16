@@ -13,6 +13,48 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'bauer_bodoni_bold';
+  src: url('../src/assets/fonts/Bauer-kit/BauerBodoni-BlackCond.woff2') format('woff2'),
+       url('../src/assets/fonts/Bauer-kit/BauerBodoni-BlackCond.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'brown';
+  src: url('../src/assets/fonts/brown-kit/brown-regular-webfont.woff2') format('woff2'),
+       url('../src/assets/fonts/brown-kit/brown-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'haas';
+  src: url('../src/assets/fonts/haas-kit/NHaasGroteskDSPro-65Md.woff2') format('woff2'),
+       url('../src/assets/fonts/haas-kit/NHaasGroteskDSPro-65Md.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'harbour_bold';
+  src: url('../src/assets/fonts/harbour-kit/harbour-bold-webfont.woff2') format('woff2'),
+       url('../src/assets/fonts/harbour-kit/harbour-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'impact';
+  src: url('../src/assets/fonts/Impact-kit/impact-webfont.woff2') format('woff2'),
+       url('../src/assets/fonts/Impact-kit/impact-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'unit';
+  src: url('../src/assets/fonts/unit-kit/UnitSlabPro-Bold.woff2') format('woff2'),
+       url('../src/assets/fonts/unit-kit/UnitSlabPro-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font-family: 'faro_trialdisplay_lucky', Arial, sans-serif;
@@ -45,5 +87,10 @@ body {
   &.form-visible {
     min-height: 100vh;
   }
+}
+
+.red{
+  background-color: red;
+  color: purple;
 }
 

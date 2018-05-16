@@ -21,8 +21,9 @@ export class SingleProjectComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      console.log(params["id"])
       this.fontInUseS.getOneUse(params["id"]).subscribe(data => {
-        console.log(data);
+        //console.log(data);
         this.case = data;
       });
     });

@@ -11,4 +11,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       document.getElementById('show-signup-btn').innerText === 'Close' ? document.getElementById('show-signup-btn').innerText = 'Signup' : document.getElementById('show-signup-btn').innerText = 'Close'
     }
   });
+
+  document.body.style("red");  
+  document.body.addEventListener("onChange", function (event) {   
+  });
 });

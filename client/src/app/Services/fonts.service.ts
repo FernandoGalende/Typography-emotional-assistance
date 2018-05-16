@@ -24,6 +24,7 @@ export class FontsService {
       .get(`${BASEURL}/api/font/${id}`, this.options)
       .map((res: Response) => res.json());
   }
+  
 
 }
 

@@ -14,6 +14,7 @@ import { FontInUseService } from "./../Services/fontInUse.service";
 export class SingleFontComponent implements OnInit {
   font: any = {};
   fontUses: any = {};
+  myEmotion: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,5 +31,9 @@ export class SingleFontComponent implements OnInit {
         });
       });
     });
-  }
+    this.route.params.subscribe(params =>{
+      this.myEmotion = params['emotion'];
+      
+    })  
+  }  
 }

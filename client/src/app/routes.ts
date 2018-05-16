@@ -8,11 +8,9 @@ import { SingleProjectComponent } from './SingleProject/SingleProject.component'
 
 
 export const routes: Routes = [
-  {path: '', component: UserLogedPage },
-  // {path: 'signup', component: AuthSignupComponent},
-  // {path: 'login', component: AuthLoginComponent},
-  {path: "font/use", component: UserLogedPage },
-  {path: "font/:id/:emotion", component: SingleFontComponent },
-  {path: "font/use/:id", component: SingleProjectComponent }
+  { path: '', component: UserLogedPage },
+  { path: "font/use", component: UserLogedPage },
+  { path: "font/:id/:emotion", component: SingleFontComponent },
+  { path: "font/case/use/:id", component: SingleProjectComponent }
 ];
 

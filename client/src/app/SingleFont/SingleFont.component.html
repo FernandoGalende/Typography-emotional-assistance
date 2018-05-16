@@ -1,8 +1,27 @@
-<div>
-  <h1>love you so much</h1>
+<div class='emotion'>
+  <div *ngIf='myEmotion==="anger"' contenteditable="true" ngClass="anger">
+    <h1>BOOOOOM!!</h1>
+  </div>
+  <div *ngIf='myEmotion==="fear"' contenteditable="true" ngClass="fear">
+    <h1>DEATH</h1>
+  </div>
+  <div *ngIf='myEmotion=="joy"' contenteditable="true" ngClass="joy">
+    <h1>Playfull</h1>
+  </div>
+  <div *ngIf='myEmotion==="analytical"' contenteditable="true" ngClass="analytical">
+    <h1>1.000 People</h1>
+  </div>
+  <div *ngIf='myEmotion==="confident"' contenteditable="true" ngClass="confident">
+    <h1>Professional</h1>
+  </div>
+  <div *ngIf='myEmotion==="tentative"' contenteditable="true" ngClass="tentative">
+    <h1>Sensuality
+      </h1>
+  </div>
 </div>
+
 <div *ngIf="font">
-  <h1>{{font.name}}</h1>
+  <h2>{{font.name}}</h2>
   <h3>{{font.publisher}}</h3>
   <h3>{{font.year}}</h3>
   <h3>{{font.designer}}</h3>
@@ -13,7 +32,7 @@
         <h2> {{e.name}} </h2>
         <img src="{{e.thumb}}" alt="" width="200" height="auto">
         <p>{{e.id}}</p>
-        <a [routerLink]="['/font/use', e.id]">show case in use</a>
+        <a [routerLink]="['/font/case/use', e.id]">show case in use</a>
       </li>
     </ul>
   </div>
