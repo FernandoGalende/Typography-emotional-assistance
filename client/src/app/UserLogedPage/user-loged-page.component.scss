@@ -22,7 +22,7 @@
   font-size: 50px;
   height: 10vh;
   line-height: 50px;
-  padding: 10% 100px;
+  padding: 10% 50px;
   button{
     color: white;
     background-color: black;
@@ -61,5 +61,12 @@ to{width: 24em;}
 @keyframes blinkTextCursor{
 from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
+}
+
+.answer{
+  padding-top: 150px;
+  text-align: center;
+  font-size: 1.5vw;
+
 }
 

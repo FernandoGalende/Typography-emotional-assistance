@@ -1,57 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
 @font-face {
   font-family: 'faro_trialdisplay_lucky';
-  src: url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff') format('woff');
+  src: url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff2') format('woff2'), url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'faro_trialdisplay_sad';
-  src: url('../src/assets/fonts/faro-kit/farotrial-displaysad-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/faro-kit/farotrial-displaysad-webfont.woff') format('woff');
+  src: url('../src/assets/fonts/faro-kit/farotrial-displaysad-webfont.woff2') format('woff2'), url('../src/assets/fonts/faro-kit/farotrial-displaysad-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'bauer_bodoni_bold';
-  src: url('../src/assets/fonts/Bauer-kit/BauerBodoni-BlackCond.woff2') format('woff2'),
-       url('../src/assets/fonts/Bauer-kit/BauerBodoni-BlackCond.woff') format('woff');
+  src: url('../src/assets/fonts/Bauer-kit/BauerBodoni-BlackCond.woff2') format('woff2'), url('../src/assets/fonts/Bauer-kit/BauerBodoni-BlackCond.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'brown';
-  src: url('../src/assets/fonts/brown-kit/brown-regular-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/brown-kit/brown-regular-webfont.woff') format('woff');
+  src: url('../src/assets/fonts/brown-kit/brown-regular-webfont.woff2') format('woff2'), url('../src/assets/fonts/brown-kit/brown-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'haas';
-  src: url('../src/assets/fonts/haas-kit/NHaasGroteskDSPro-65Md.woff2') format('woff2'),
-       url('../src/assets/fonts/haas-kit/NHaasGroteskDSPro-65Md.woff') format('woff');
+  src: url('../src/assets/fonts/haas-kit/NHaasGroteskDSPro-65Md.woff2') format('woff2'), url('../src/assets/fonts/haas-kit/NHaasGroteskDSPro-65Md.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'harbour_bold';
-  src: url('../src/assets/fonts/harbour-kit/harbour-bold-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/harbour-kit/harbour-bold-webfont.woff') format('woff');
+  src: url('../src/assets/fonts/harbour-kit/harbour-bold-webfont.woff2') format('woff2'), url('../src/assets/fonts/harbour-kit/harbour-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'impact';
-  src: url('../src/assets/fonts/Impact-kit/impact-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/Impact-kit/impact-webfont.woff') format('woff');
+  src: url('../src/assets/fonts/Impact-kit/impact-webfont.woff2') format('woff2'), url('../src/assets/fonts/Impact-kit/impact-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'unit';
-  src: url('../src/assets/fonts/unit-kit/UnitSlabPro-Bold.woff2') format('woff2'),
-       url('../src/assets/fonts/unit-kit/UnitSlabPro-Bold.woff') format('woff');
+  src: url('../src/assets/fonts/unit-kit/UnitSlabPro-Bold.woff2') format('woff2'), url('../src/assets/fonts/unit-kit/UnitSlabPro-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -89,8 +89,128 @@ body {
   }
 }
 
-.red{
+.anger {
+  font-family: 'impact';
   background-color: red;
-  color: purple;
+  color: yellow;
+  nav {
+    font-family: 'impact' !important;
+    background-color: red !important;
+    color: yellow !important;
+    .nav-logo {
+      font-family: 'impact' !important;
+      background-color: red !important;
+      color: yellow !important;
+      h1 {
+        font-family: 'impact' !important;
+        background-color: red !important;
+        color: yellow !important;
+      }
+    }
+  }
 }
 
+.fear {
+  font-family: 'harbour_bold';
+  background-color: black;
+  color: white;
+  nav {
+    font-family: 'harbour_bold' !important;
+    background-color: black !important;
+    color: white !important;
+    .nav-logo {
+      font-family: 'harbour_bold' !important;
+      background-color: black !important;
+      color: white !important;
+      h1 {
+        font-family: 'harbour_bold' !important;
+        background-color: black !important;
+        color: white !important;
+      }
+    }
+  }
+}
+
+.joy {
+  font-family: 'brown';
+  background-color: greenyellow;
+  color: blue;
+  nav {
+    font-family: 'brown' !important;
+    background-color: greenyellow !important;
+    color: blue !important;
+    .nav-logo {
+      font-family: 'brown' !important;
+      background-color: greenyellow !important;
+      color: blue !important;
+      h1 {
+        font-family: 'brown' !important;
+        background-color: greenyellow !important;
+        color: blue !important;
+      }
+    }
+  }
+}
+
+.analytical {
+  font-family: 'unit';
+  background-color: darkblue;
+  color: white;
+  nav {
+    font-family: 'unit' !important;
+    background-color: darkblue !important;
+    color: white !important;
+    .nav-logo {
+      font-family: 'unit' !important;
+      background-color: darkblue !important;
+      color: white !important;
+      h1 {
+        font-family: 'unit' !important;
+        background-color: darkblue !important;
+        color: white !important;
+      }
+    }
+  }
+}
+
+.confident {
+  font-family: 'haas';
+  background-color: grey;
+  color: black;
+  nav {
+    font-family: 'haas' !important;
+    background-color: grey !important;
+    color: black !important;
+    .nav-logo {
+      font-family: 'haas' !important;
+      background-color: grey !important;
+      color: black !important;
+      h1 {
+        font-family: 'haas' !important;
+        background-color: grey !important;
+        color: black !important;
+      }
+    }
+  }
+}
+
+.tentative {
+  font-family: 'bauer_bodoni_bold';
+  background-color: pink;
+  color: red;
+  nav {
+    font-family: 'bauer_bodoni_bold' !important;
+    background-color: pink !important;
+    color: red !important;
+    .nav-logo {
+      font-family: 'bauer_bodoni_bold' !important;
+      background-color: pink !important;
+      color: red !important;
+      h1 {
+        font-family: 'bauer_bodoni_bold' !important;
+        background-color: pink !important;
+        color: red !important;
+      }
+    }
+  }
+}

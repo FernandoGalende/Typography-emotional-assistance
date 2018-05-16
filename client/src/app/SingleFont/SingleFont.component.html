@@ -1,5 +1,5 @@
 <div class='emotion'>
-  <div *ngIf='myEmotion==="anger"' contenteditable="true" ngClass="anger">
+  <div *ngIf='myEmotion==="anger"' contenteditable="true" ngClass="anger" >
     <h1>BOOOOOM!!</h1>
   </div>
   <div *ngIf='myEmotion==="fear"' contenteditable="true" ngClass="fear">
@@ -16,24 +16,28 @@
   </div>
   <div *ngIf='myEmotion==="tentative"' contenteditable="true" ngClass="tentative">
     <h1>Sensuality
-      </h1>
+    </h1>
   </div>
 </div>
 
 <div *ngIf="font">
-  <h2>{{font.name}}</h2>
-  <h3>{{font.publisher}}</h3>
-  <h3>{{font.year}}</h3>
-  <h3>{{font.designer}}</h3>
-  <p>{{font.info}}</p>
+  <div class="container font-info">
+    <h2>{{font.name}}</h2>  
+    <p>{{font.year}}</p>
+    <h3>{{font.designer}}</h3>
+    <p>{{font.info}}</p>
+  </div>
   <div *ngIf="fontUses.data">
-    <ul>
-      <li *ngFor="let e of fontUses.data.uses">
-        <h2> {{e.name}} </h2>
-        <img src="{{e.thumb}}" alt="" width="200" height="auto">
-        <p>{{e.id}}</p>
-        <a [routerLink]="['/font/case/use', e.id]">show case in use</a>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4" *ngFor="let e of fontUses.data.uses">
+          <a [routerLink]="['/font/case/use', e.id]">
+            <img src="{{e.thumb}}" alt="" width="350" height="auto">
+          </a>
+          <h5> {{e.name}} </h5>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

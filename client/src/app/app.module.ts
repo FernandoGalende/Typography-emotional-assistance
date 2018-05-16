@@ -18,6 +18,7 @@ import { QuestionsService } from "./Services/questions.service";
 import { WatsonService } from "./Services/watson.service";
 import { FontsService } from "./Services/fonts.service";
 import { FontInUseService } from "./Services/fontInUse.service";
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -29,7 +30,8 @@ import { FontInUseService } from "./Services/fontInUse.service";
     UserLogedPage,
     SingleFontComponent,
     SingleProjectComponent,
-    NavComponent  
+    NavComponent,
+    FooterComponent
 ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ nav {
   display: flex;
   background-color: black;
   align-items: center;
+  position: fixed;
+  z-index: 100;
   .nav-logo {
     width: 70%;
     text-align: left;
@@ -19,6 +21,8 @@ nav {
       text-decoration: none;
       font-size: 80px;
       color: white;
+      
+      
       h1 {
         font-size: 60px;
       }
@@ -34,6 +38,7 @@ nav {
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 3px;
+    cursor: pointer;
     a {
       display: flex;
       justify-content: flex-end;

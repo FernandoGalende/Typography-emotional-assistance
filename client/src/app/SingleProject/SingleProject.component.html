@@ -1,18 +1,24 @@
-<p>
-  SingleProject works!
-</p>
+<!-- <p>
+  {{this.use.name}}</p> -->
 
-<p>{{this.use.name}}</p>
 
-<ul>
-  <li *ngFor="let e of case.use">
-    <h2> {{e.name}} </h2>
-    <div>
-      <li *ngFor="let j of e.media_items">
-        <img src="{{j.src}}" alt="">
-      </li>
+<!-- <div *ngFor="let e of case.use">
+  <h2> {{e.name}} </h2>
+  <div>
+    <div *ngFor="let j of e.media_items">
+      <img src="{{j.src}}" alt="">
     </div>
-    <!-- <img src="{{e.thumb}}" alt="" width="200" height="auto">
-      <p>{{e.id}}</p> -->
-  </li>
-</ul>
+  </div>
+</div> -->
+
+
+<div class="container control-group">
+  <div *ngFor="let e of case.use">
+    <h1>{{e.name}}</h1>
+    <div *ngFor="let j of e.media_items">
+      <div>
+        <img class="d-block w-100" src="{{j.src}}" alt="Third slide">
+      </div>
+    </div>
+  </div>
+</div>

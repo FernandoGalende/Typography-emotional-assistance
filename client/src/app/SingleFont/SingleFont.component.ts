@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 import { FontsService } from "../Services/fonts.service";
 import { FontInterface } from "../interfaces/font-Interface";
 import { ActivatedRoute } from "@angular/router";
@@ -14,12 +14,13 @@ import { FontInUseService } from "./../Services/fontInUse.service";
 export class SingleFontComponent implements OnInit {
   font: any = {};
   fontUses: any = {};
-  myEmotion: String;
+  myEmotion: string;
 
   constructor(
     private route: ActivatedRoute,
     private fontS: FontsService,
-    private fontInUseS: FontInUseService
+    private fontInUseS: FontInUseService,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
@@ -33,7 +34,7 @@ export class SingleFontComponent implements OnInit {
     });
     this.route.params.subscribe(params =>{
       this.myEmotion = params['emotion'];
-      
     })  
+    this.renderer.addClass(document.body, this.myEmotion);
   }  
 }

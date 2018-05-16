@@ -18,7 +18,6 @@ export class FontInUseService {
     return this.http
       .post(`${BASEURL}/api/uses`, { info }, this.options)
       .map((res: Response) => {
-        console.log(res);
         return res.json();
       });
   }
