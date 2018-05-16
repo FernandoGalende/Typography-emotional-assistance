@@ -18,6 +18,8 @@ const BASEURL = "http://localhost:3000";
   styleUrls: ["./user-loged-page.component.scss"],
 })
 export class UserLogedPage implements OnInit {
+  myEmotion:string;
+
   questions: Array<QuestionInterface>;
   user: any;
   info: string;
@@ -30,9 +32,11 @@ export class UserLogedPage implements OnInit {
       confident: 0,
       tentative: 0  
    };
+   
   formAnswer: Array<number> = [];
   current: number = 0;
   title: String;
+
   userEmotion: Emotion = {
       anger: 0,
       fear: 0,
@@ -41,9 +45,12 @@ export class UserLogedPage implements OnInit {
       confident: 0,
       tentative: 0    
   };
+
+
   fonts: object = {}
   suitedArray: Array<any>=[];
   idFont: string;
+
   constructor(
     public session: SessionService,
     public questionS: QuestionsService,
@@ -56,14 +63,12 @@ export class UserLogedPage implements OnInit {
     this.questionS.getQuestions().subscribe(data => {
       this.questions = data;
     });
-    this.fontS.getFonts()
-    .subscribe((data) => this.fonts = data)
+    //traer sólo una fuente al final al final
+    this.fontS.getFonts().subscribe((data) => this.fonts = data)
   }
 
   getEmotion() {
     this.watsonIsAnswer = true;
-    console.log("Q-->")
-    console.log(this.questions)
     this.watsonS.getEmotion(this.info).subscribe(data => {
       this.watsonAnswer.anger = data.anger;
       this.watsonAnswer.fear = data.fear;
@@ -72,13 +77,10 @@ export class UserLogedPage implements OnInit {
       this.watsonAnswer.confident = data.confident;
       this.watsonAnswer.tentative = data.tentative;      
     });
-    console.log(this.watsonAnswer)
   }
 
   getAnswers(ans) { 
-    console.log(ans)  
     this.formAnswer.push(ans);
-    console.log(this.formAnswer)
     if ((this.formAnswer.length === this.questions.length)&&(this.watsonAnswer)) { 
       this.userEmotion.anger = (this.formAnswer[0] + Number(this.watsonAnswer.anger))/2;      
       this.userEmotion.fear = (this.formAnswer[1] + Number(this.watsonAnswer.fear))/2;
@@ -86,9 +88,6 @@ export class UserLogedPage implements OnInit {
       this.userEmotion.analytical = (this.formAnswer[3] + Number(this.watsonAnswer.analytical))/2;
       this.userEmotion.confident = (this.formAnswer[4]+ Number(this.watsonAnswer.confident))/2;
       this.userEmotion.tentative = (this.formAnswer[5] + Number(this.watsonAnswer.tentative))/2;  
-      console.log("termino la asignacion de preguntas") 
-      console.log(this.formAnswer[5])
-      console.log(this.userEmotion)
       this.mostSuitedFont(this.userEmotion);   
     } else {
       this.current++;
@@ -105,27 +104,22 @@ export class UserLogedPage implements OnInit {
     return myArray[0][0]
   }
   mostSuitedFont(userEmotion){
-    var myEmotion = this.currentEmotion(userEmotion);
+    
+    this.myEmotion = this.currentEmotion(userEmotion);
     
     for (var key in this.fonts){
       for (var item in this.fonts[key].emotions){
-        if(item === myEmotion){
+        if(item === this.myEmotion){
           this.suitedArray.push([this.fonts[key].name,this.fonts[key]._id,this.fonts[key].emotions[item]])
         }
       }
     }
-    console.log("antes del sort")
-    console.log(this.suitedArray)
+
     this.suitedArray = this.suitedArray.sort((a,b)=>{
       return b[2] - a[2];
     })
-    console.log("despues del sort")
-    console.log(this.suitedArray )
-    console.log(`For a project which feels ${myEmotion} , I would recommend first ${this.suitedArray[0][0]}`)
-    console.log(`For a project which feels ${myEmotion} , I would recommend second ${this.suitedArray[1][0]}`)
-    console.log(this.suitedArray[0][1])
+    
     this.idFont = this.suitedArray[0][1]
     this.fontS.getFont(this.suitedArray[0][0]) 
   }
-
 }

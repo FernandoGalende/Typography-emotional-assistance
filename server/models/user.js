@@ -5,7 +5,8 @@ const userSchema = new Schema({
   username: String,
   password: String,
   isPro: { type: Boolean, default: false },
-  name: String,
+  kindOfPerson: String,
+  lastEmotion: { type: String, default: "analytical" },
 }, {
   timestamps: {
     createdAt: "created_at",

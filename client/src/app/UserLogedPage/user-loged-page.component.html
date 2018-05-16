@@ -1,5 +1,4 @@
 <div *ngIf="user">
-
   <div *ngIf="user&&questions">
     <div *ngIf="!watsonIsAnswer">
       <form class="watson">
@@ -21,7 +20,7 @@
     <div *ngIf="this.formAnswer.length===this.questions.length">
       <h1>I would recommend first {{this.suitedArray[0][0]}} fontface</h1>
       <h1>I would recommend second {{this.suitedArray[1][0]}} fontface</h1>
-      <a [routerLink]="['/font/', this.idFont]">show me a font</a>
+      <a [routerLink]="['/font/', this.idFont, myEmotion]">show me a font</a>
     </div>
   </div>
   <!-- <my-notlogged-component></my-notlogged-component> -->

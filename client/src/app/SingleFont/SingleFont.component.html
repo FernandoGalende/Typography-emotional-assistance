@@ -1,12 +1,14 @@
+<div>
+  <h1>love you so much</h1>
+</div>
 <div *ngIf="font">
   <h1>{{font.name}}</h1>
   <h3>{{font.publisher}}</h3>
   <h3>{{font.year}}</h3>
   <h3>{{font.designer}}</h3>
   <p>{{font.info}}</p>
-
   <div *ngIf="fontUses.data">
-      <ul>
+    <ul>
       <li *ngFor="let e of fontUses.data.uses">
         <h2> {{e.name}} </h2>
         <img src="{{e.thumb}}" alt="" width="200" height="auto">

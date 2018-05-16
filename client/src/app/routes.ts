@@ -12,7 +12,7 @@ export const routes: Routes = [
   // {path: 'signup', component: AuthSignupComponent},
   // {path: 'login', component: AuthLoginComponent},
   {path: "font/use", component: UserLogedPage },
-  {path: "font/:id", component: SingleFontComponent },
+  {path: "font/:id/:emotion", component: SingleFontComponent },
   {path: "font/use/:id", component: SingleProjectComponent }
 ];
 
