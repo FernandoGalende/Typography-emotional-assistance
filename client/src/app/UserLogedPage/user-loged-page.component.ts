@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 import { SessionService } from "./../Services/session.service";
 import { QuestionsService } from "../Services/questions.service";
 import { WatsonService } from "../Services/watson.service";
@@ -55,7 +55,8 @@ export class UserLogedPage implements OnInit {
     public session: SessionService,
     public questionS: QuestionsService,
     private watsonS: WatsonService,
-    private fontS: FontsService
+    private fontS: FontsService,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
@@ -65,6 +66,7 @@ export class UserLogedPage implements OnInit {
     });
     //traer sólo una fuente al final al final
     this.fontS.getFonts().subscribe((data) => this.fonts = data)
+    this.renderer.addClass(document.body, this.session.myEmotion);
   }
 
   getEmotion() {

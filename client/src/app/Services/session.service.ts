@@ -14,6 +14,7 @@ export class SessionService {
   user: object;
   userEvent: EventEmitter<any> =  new EventEmitter();
   options: any = { withCredentials: true };
+  myEmotion: string;
 
   constructor(private http: Http, private router: Router) {
     this.isLogged().subscribe();

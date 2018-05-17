@@ -1,12 +1,12 @@
 <nav>
   <div class="nav-logo">
-     <a href="/">
+     <a [routerLink]="['/']">
       <h1>aurelio</h1>
     </a> 
     <div *ngIf="user"></div>
   </div>
   <div *ngIf="user" class="nav-auth">
-    <a (click)="logout()">logout</a>
+    <a (click)="logout()" href="/" style="color: white">logout</a>
     <!-- <p>Hi {{user.username}}!!</p>     -->
   </div>
   <div *ngIf="!user" class="nav-auth">

@@ -17,7 +17,8 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(0%);    
+  transform: translateY(0%);   
+
 }
 
 .anim-typewriter{
@@ -32,3 +33,5 @@ to{width: 24em;}
 from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
+
+

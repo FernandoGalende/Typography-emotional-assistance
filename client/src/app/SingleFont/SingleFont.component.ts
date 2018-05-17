@@ -20,6 +20,7 @@ export class SingleFontComponent implements OnInit {
     private route: ActivatedRoute,
     private fontS: FontsService,
     private fontInUseS: FontInUseService,
+    private sessionS: SessionService,
     private renderer: Renderer2
   ) {}
 
@@ -34,7 +35,9 @@ export class SingleFontComponent implements OnInit {
     });
     this.route.params.subscribe(params =>{
       this.myEmotion = params['emotion'];
+      this.sessionS.myEmotion = this.myEmotion;
     })  
     this.renderer.addClass(document.body, this.myEmotion);
+
   }  
 }

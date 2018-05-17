@@ -34,7 +34,7 @@ export class NavComponent implements OnInit {
   logout() {
     this.session.logout().subscribe(() => {
       this.user = null;
-      this.router.navigate(['/']);
+      // this.router.navigate(['/']);
 
       
     });
