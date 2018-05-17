@@ -5,33 +5,33 @@ const dbURL = process.env.DBURL;
 
 
 const questions = [{
-  question: "1.Anger: Your project should end up something similar to one of this arquitecural type?",
-  items: ["https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg","https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg","https://upload.wikimedia.org/wikipedia/commons/4/4a/Detail_arabesque_Alhambra_Granada_Spain.jpg"],
+  question: "How aggressive you should express from 0 to 100?",
+  items: [],
   emotion: "anger"
   },
   {
-  question: "2.Fear: What sound represents better your intencional expresive?",
-  items: ["./assets/Audio/3.mp3","./assets/Audio/3.mp3","./assets/Audio/3.mp3"],
+  question: "How much fear you should express from 0 to 100?",
+  items: [],
   emotion: "fear",
   },
   {
-   question: "3.Joy: Please, choose one or more concepts to represent better?",
-   items: ["Jump", "Jump", "Jump", "Jump"],
+   question: "How playful you should express from 0 to 100?",
+   items: [],
    emotion: "joy",
   },
   {
-  question: "4.Analytical: what kind of politic newspaper represente better?",
-  items:["Retador","Diferencial","Lider","Clasico","Moderno"],
+  question: "How analytical you should express from 0 to 100?",
+  items:[],
   emotion: "Analytical",
   },
   {
-  question: "5.Confident: What art represents better your project?",
-  items: ["Retador","Diferencial","Lider","Clasico","Moderno"],
+  question: "How much professional you should express from 0 to 100?",
+  items: [],
   emotion: "confident",
   },
   {
-  question: "6.Tentative: Who much sexy shoul be your proyect?",
-  items: ["Retador","Diferencial","Lider","Clasico","Moderno"],
+  question: "How sensuality you should express from 0 to 100?",
+  items: [],
   emotion: "tentative",
   }   
 ];

@@ -1,3 +1,7 @@
+<div *ngIf="!user">
+  <app-home></app-home>
+</div>
+
 <div *ngIf="user">
   <div *ngIf="user&&questions">
     <div *ngIf="!watsonIsAnswer">

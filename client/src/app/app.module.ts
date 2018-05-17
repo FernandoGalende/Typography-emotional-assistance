@@ -19,6 +19,7 @@ import { WatsonService } from "./Services/watson.service";
 import { FontsService } from "./Services/fonts.service";
 import { FontInUseService } from "./Services/fontInUse.service";
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     SingleFontComponent,
     SingleProjectComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
 ],
   imports: [
     BrowserModule,
