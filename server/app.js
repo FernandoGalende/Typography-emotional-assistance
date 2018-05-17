@@ -54,7 +54,8 @@ const index = require('./routes/api/index.controller')
 
 
 app.use('/api', index)
-app.all('/*', (req, res) => {
+
+app.use(function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
 
