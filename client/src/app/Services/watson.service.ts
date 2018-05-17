@@ -3,8 +3,9 @@ import { Http, Response } from "@angular/http";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { Observable } from "rxjs/Rx";
+import { environment }  from '../../environments/environment';
 
-const BASEURL = "http://localhost:3000";
+const  BASEURL:string= environment.BASEURL;
 
 @Injectable()
 export class WatsonService {

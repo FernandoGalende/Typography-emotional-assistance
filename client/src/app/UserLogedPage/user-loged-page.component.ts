@@ -117,11 +117,9 @@ export class UserLogedPage implements OnInit {
         }
       }
     }
-
     this.suitedArray = this.suitedArray.sort((a,b)=>{
       return b[2] - a[2];
-    })
-    
+    })    
     this.idFont = this.suitedArray[0][1]
     this.fontS.getFont(this.suitedArray[0][0]) 
   }
