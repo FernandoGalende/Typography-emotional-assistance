@@ -16,13 +16,12 @@
   animation: blinkTextCursor 1000ms steps(44) infinite normal; // overflow: auto;
 }
 
-.watson,
-.questions {
+.watson, .questions {
   text-align: center;
   font-size: 50px;
-  height: 10vh;
+  height: auto;
   line-height: 50px;
-  padding: 10% 10px;
+  padding-top: 10%;
   button {
     color: white;
     background-color: black;
@@ -30,17 +29,27 @@
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-top: 100px;
     border: 1px solid white;
     border-radius: 25px;
-    padding: 1px 20px;
+    padding: 0 20px;
   }
+ button:hover {
+   background-color: white;
+   color: black;
+  }
+
+button:active {
+  background-color: white;
+  box-shadow: 0 5px white;
+  transform: translateY(4px);
+  color: black;
+}
 }
 
 .line-1 {
   position: relative;
   top: 40%;
-  height: 50px;
+  height: 70px;
   width: 20em;
   margin: 0 auto;
   border-right: 1px solid rgba(255, 255, 255, .75);
@@ -74,18 +83,45 @@
 }
 
 .answer {
-  padding-top: 150px;
+  padding-top: 0px;
   text-align: center;
   font-size: 1.5vw;
+  span{
+    text-transform: uppercase;
+  }
+  button {
+    color: white;
+    background-color: black;
+    font-family: arial;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 100px;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 10px 20px;
+  }
+  button:hover {
+    background-color: white;
+    color: black;
+ 
+   }
+ 
+ button:active {
+   background-color: white;
+   box-shadow: 0 5px white;
+   transform: translateY(4px);
+   color: black;
+ }
 }
 
 .smallAnswer {
-  bottom: 90px;
-  padding-left: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 30px;
   text-align: left;
   font-size: 0.7vw;
   font-family: 'brown'; 
-  position: fixed;
   line-height: 1vw;
   letter-spacing: 0.5px;
   h6 {

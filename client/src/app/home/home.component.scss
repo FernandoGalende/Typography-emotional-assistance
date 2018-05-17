@@ -1,37 +1,38 @@
-
-.questions{
+.questions {
   text-align: center;
   font-size: 50px;
-  height: 10vh;
-  line-height: 50px;
-  padding-top: 23%;
 }
-.line-1{
+
+.line-1 {
   position: relative;
-  top: 40%;  
-  height: 50px;
-  width: 20em;
   margin: 0 auto;
-  border-right: 1px solid rgba(255,255,255,.75);
+  border-right: 1px solid rgba(255, 255, 255, .75);
   font-size: 90%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(0%);   
+  transform: translateY(0%);
+}
+
+.anim-typewriter {
+  animation: typewriter 3s steps(44) 1s 1 normal both, blinkTextCursor 1000ms steps(44) infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;   
+  }
 
 }
 
-.anim-typewriter{
-  animation: typewriter 3s steps(44) 1s 1 normal both,
-  blinkTextCursor 1000ms steps(44) infinite normal;
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, .75);    
+  }
+  to {
+    border-right-color: transparent;    
+  }
 }
-@keyframes typewriter{
-from{width: 0;}
-to{width: 24em;}
-}
-@keyframes blinkTextCursor{
-from{border-right-color: rgba(255,255,255,.75);}
-to{border-right-color: transparent;}
-}
-
-

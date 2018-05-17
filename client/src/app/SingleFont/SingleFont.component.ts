@@ -37,6 +37,7 @@ export class SingleFontComponent implements OnInit {
       this.myEmotion = params['emotion'];
       this.sessionS.myEmotion = this.myEmotion;
     })  
+    this.renderer.removeClass(document.body, this.myEmotion);
     this.renderer.addClass(document.body, this.myEmotion);
 
   }  

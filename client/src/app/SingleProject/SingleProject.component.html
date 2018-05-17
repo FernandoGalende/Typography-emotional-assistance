@@ -1,23 +1,11 @@
-<!-- <p>
-  {{this.use.name}}</p> -->
-
-
-<!-- <div *ngFor="let e of case.use">
-  <h2> {{e.name}} </h2>
-  <div>
-    <div *ngFor="let j of e.media_items">
-      <img src="{{j.src}}" alt="">
-    </div>
-  </div>
-</div> -->
-
-
 <div class="container control-group">
   <div *ngFor="let e of case.use">
     <h1>{{e.name}}</h1>
-    <div *ngFor="let j of e.media_items">
-      <div>
-        <img class="d-block w-100" src="{{j.src}}" alt="Third slide">
+    <div class="row">
+      <div *ngFor="let j of e.media_items" class="col-sm-12">
+        <div class="img-wrapper">
+          <img class="img-fluid" src="{{j.src}}" alt="Third slide">
+        </div>
       </div>
     </div>
   </div>

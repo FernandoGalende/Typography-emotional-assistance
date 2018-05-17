@@ -1,7 +1,7 @@
 nav {
   margin: 0;
   padding: 0%;
-  height: auto;
+  height: 115px;
   width: 100%;
   color: white;
   border-bottom: 1px solid white;
@@ -20,11 +20,15 @@ nav {
     a {
       text-decoration: none;
       font-size: 80px;
-      color: white;
-      
+      color: white;  
       
       h1 {
-        font-size: 60px;
+        font-family: 'faro_trialdisplay_sad';
+        font-size: 70px;
+
+      }
+      h1:hover{
+        font-family: 'faro_trialdisplay_lucky';        
       }
     }
   }

@@ -9,30 +9,31 @@
           <p class="line-1 anim-typewriter">Please, tell me some feelings about your project</p>
           <textarea class="textarea" name="info" [(ngModel)]="info" required autofocus></textarea>
         </div>
-        <button type="submit" (click)="getEmotion()">Submit watson</button>
+        <button type="submit" (click)="getEmotion()" style="cursor: pointer;" >Submit watson</button>
       </form>
     </div>
     <div *ngIf="watsonIsAnswer" class="questions">
-      <p> {{questions[current].question}} </p>
+      <div *ngIf="this.formAnswer.length!==this.questions.length">
+        <p> {{questions[current].question}} </p>
       <button type="submit" (click)="getAnswers(0)"> 0%</button>
       <button type="submit" (click)="getAnswers(0.25)">25%</button>
       <button type="submit" (click)="getAnswers(0.5)">50%</button>
       <button type="submit" (click)="getAnswers(0.75)">75%</button>
       <button type="submit" (click)="getAnswers(1)">100%</button>
       <div class="smallAnswer">
-          <h6>E.F.I.</h6>
-          <p> 1. Anger: Watson: {{watsonAnswer.anger}}, {{formAnswer[0]}}
-            <br> 2. Fear: Watson: {{watsonAnswer.fear}}, {{formAnswer[1]}}
-            <br> 3. Happy: Watson: {{watsonAnswer.joy}}, {{formAnswer[2]}}
-            <br> 4. Analytical: Watson: {{watsonAnswer.analytical}}, {{formAnswer[3]}}
-            <br> 5. Confident: Watson: {{watsonAnswer.confident}}, {{formAnswer[4]}}
-            <br> 6. Tentative: Watson: {{watsonAnswer.tentative}}, {{formAnswer[5]}}</p>
-        </div>
+      <h6>E.F.I.</h6>
+      <p> 1. Anger: Watson: {{watsonAnswer.anger}} / {{formAnswer[0]}}
+      <br> 2. Fear: Watson: {{watsonAnswer.fear}} / {{formAnswer[1]}}
+      <br> 3. Happy: Watson: {{watsonAnswer.joy}} / {{formAnswer[2]}}
+      <br> 4. Analytical: Watson: {{watsonAnswer.analytical}} / {{formAnswer[3]}}
+      <br> 5. Confident: Watson: {{watsonAnswer.confident}} / {{formAnswer[4]}}
+      <br> 6. Tentative: Watson: {{watsonAnswer.tentative}} / {{formAnswer[5]}}</p>
+      </div></div>
     </div>
     <div *ngIf="this.formAnswer.length===this.questions.length" class="answer">
-      <h1>I would recommend first {{this.suitedArray[0][0]}} fontface</h1>
-      <h1>I would recommend second {{this.suitedArray[1][0]}} fontface</h1>
-      <a [routerLink]="['/font/', this.idFont, myEmotion]">show me a font</a>
+      <h1>I would recommend first  <span>{{this.suitedArray[0][0]}}</span> fontface</h1>
+      <h1>I would recommend second <span>{{this.suitedArray[1][0]}}</span> fontface</h1>
+      <button [routerLink]="['/font/', this.idFont, myEmotion]">show me a font</button>
     </div>
   </div>
   <!-- <my-notlogged-component></my-notlogged-component> -->

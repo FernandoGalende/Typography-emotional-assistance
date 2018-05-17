@@ -66,6 +66,7 @@ export class UserLogedPage implements OnInit {
     });
     //traer sólo una fuente al final al final
     this.fontS.getFonts().subscribe((data) => this.fonts = data)
+    this.renderer.removeClass(document.body, this.session.myEmotion);
     this.renderer.addClass(document.body, this.session.myEmotion);
   }
 

@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
 @font-face {
   font-family: 'faro_trialdisplay_lucky';
   src: url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff2') format('woff2'), url('../src/assets/fonts/faro-kit/farotrial-displaylucky-webfont.woff') format('woff');
@@ -93,32 +91,45 @@ body {
   font-family: 'impact';
   background-color: red;
   color: yellow;
-  footer{
+  footer {
     font-family: 'impact' !important;
     background-color: red !important;
     color: yellow !important;
   }
-  .textarea{
+  .textarea {
     font-family: 'impact' !important;
     background-color: red !important;
     color: yellow !important;
   }
-  button{
+  button {
     font-family: 'impact' !important;
     background-color: red !important;
     color: yellow !important;
+  }
+  button:hover {
+    background-color: white;
+    color: red;
+  }
+  button:active {
+    background-color: white;
+    box-shadow: 0 5px white;
+    transform: translateY(4px);
+    color: red;
   }
   nav {
     font-family: 'impact' !important;
     background-color: red !important;
     color: yellow !important;
     .nav-logo {
-      font-family: 'impact' !important;
-      background-color: red !important;
-      color: yellow !important;
-      h1 {
+      a {
+        h1 {
+          color: yellow !important;
+        }
+      }
+    }
+    .nav-auth {
+      a {
         font-family: 'impact' !important;
-        background-color: red !important;
         color: yellow !important;
       }
     }
@@ -129,32 +140,45 @@ body {
   font-family: 'harbour_bold';
   background-color: black;
   color: white;
-  footer{
+  footer {
     font-family: 'harbour_bold' !important;
     background-color: black !important;
     color: white !important;
   }
-  .textarea{
+  .textarea {
     font-family: 'harbour_bold' !important;
     background-color: black !important;
     color: white !important;
   }
-  button{
+  button {
     font-family: 'harbour_bold' !important;
     background-color: black !important;
     color: white !important;
+  }
+  button:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+  button:active {
+    background-color: white !important;
+    box-shadow: 0 5px white !important;
+    transform: translateY(4px) !important;
+    color: black !important;
   }
   nav {
     font-family: 'harbour_bold' !important;
     background-color: black !important;
     color: white !important;
     .nav-logo {
-      font-family: 'harbour_bold' !important;
-      background-color: black !important;
-      color: white !important;
-      h1 {
+      a {
+        h1 {
+          color: white !important;
+        }
+      }
+    }
+    .nav-auth {
+      a {
         font-family: 'harbour_bold' !important;
-        background-color: black !important;
         color: white !important;
       }
     }
@@ -165,32 +189,45 @@ body {
   font-family: 'brown';
   background-color: greenyellow;
   color: blue;
-  footer{
+  footer {
     font-family: 'brown' !important;
     background-color: greenyellow !important;
     color: blue !important;
   }
-  .textarea{
+  .textarea {
     font-family: 'brown' !important;
     background-color: greenyellow !important;
     color: blue !important;
   }
-  button{
+  button {
     font-family: 'brown' !important;
     background-color: greenyellow !important;
     color: blue !important;
+  }
+  button:hover {
+    background-color: white !important;
+    color: blue !important;
+  }
+  button:active {
+    background-color: white !important;
+    box-shadow: 0 5px white !important;
+    transform: translateY(4px) !important;
+    color: blue;
   }
   nav {
     font-family: 'brown' !important;
     background-color: greenyellow !important;
     color: blue !important;
     .nav-logo {
-      font-family: 'brown' !important;
-      background-color: greenyellow !important;
-      color: blue !important;
-      h1 {
+      a {
+        h1 {
+          color: blue !important;
+        }
+      }
+    }
+    .nav-auth {
+      a {
         font-family: 'brown' !important;
-        background-color: greenyellow !important;
         color: blue !important;
       }
     }
@@ -201,32 +238,45 @@ body {
   font-family: 'unit';
   background-color: darkblue;
   color: white;
-  footer{
+  footer {
     font-family: 'unit' !important;
     background-color: darkblue !important;
     color: white !important;
   }
-  .textarea{
+  .textarea {
     font-family: 'unit' !important;
     background-color: darkblue !important;
     color: white !important;
   }
-  button{
+  button {
     font-family: 'unit' !important;
     background-color: darkblue !important;
     color: white !important;
+  }
+  button:hover {
+    background-color: white !important;
+    color: darkblue !important;
+  }
+  button:active {
+    background-color: white !important;
+    box-shadow: 0 5px white !important;
+    transform: translateY(4px) !important;
+    color: darkblue;
   }
   nav {
     font-family: 'unit' !important;
     background-color: darkblue !important;
     color: white !important;
     .nav-logo {
-      font-family: 'unit' !important;
-      background-color: darkblue !important;
-      color: white !important;
-      h1 {
+      a {
+        h1 {
+          color: white !important;
+        }
+      }
+    }
+    .nav-auth {
+      a {
         font-family: 'unit' !important;
-        background-color: darkblue !important;
         color: white !important;
       }
     }
@@ -237,19 +287,29 @@ body {
   font-family: 'haas';
   background-color: grey;
   color: black;
-  footer{
+  footer {
     font-family: 'haas' !important;
     background-color: grey !important;
     color: black !important;
   }
-  .textarea{
+  .textarea {
     font-family: 'haas' !important;
     background-color: grey !important;
     color: black !important;
   }
-  button{
+  button {
     font-family: 'haas' !important;
     background-color: grey !important;
+    color: black !important;
+  }
+  button:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+  button:active {
+    background-color: white !important;
+    box-shadow: 0 5px white !important;
+    transform: translateY(4px) !important;
     color: black !important;
   }
   nav {
@@ -257,12 +317,15 @@ body {
     background-color: grey !important;
     color: black !important;
     .nav-logo {
-      font-family: 'haas' !important;
-      background-color: grey !important;
-      color: black !important;
-      h1 {
+      a {
+        h1 {
+          color: black !important;
+        }
+      }
+    }
+    .nav-auth {
+      a {
         font-family: 'haas' !important;
-        background-color: grey !important;
         color: black !important;
       }
     }
@@ -273,19 +336,29 @@ body {
   font-family: 'bauer_bodoni_bold';
   background-color: pink;
   color: red;
-  footer{
+  footer {
     font-family: 'bauer_bodoni_bold' !important;
     background-color: pink !important;
     color: red !important;
   }
-  .textarea{
+  .textarea {
     font-family: 'bauer_bodoni_bold' !important;
     background-color: pink !important;
     color: red !important;
   }
-  button{
+  button {
     font-family: 'bauer_bodoni_bold' !important;
     background-color: pink !important;
+    color: red !important;
+  }
+  button:hover {
+    background-color: red !important;
+    color: pink !important;
+  }
+  button:active {
+    background-color: pink !important;
+    box-shadow: 0 5px pink !important;
+    transform: translateY(4px) !important;
     color: red !important;
   }
   nav {
@@ -293,14 +366,29 @@ body {
     background-color: pink !important;
     color: red !important;
     .nav-logo {
-      font-family: 'bauer_bodoni_bold' !important;
-      background-color: pink !important;
-      color: red !important;
-      h1 {
+      a {
+        h1 {
+          color: red !important;
+        }
+      }
+    }
+    .nav-auth {
+      a {
         font-family: 'bauer_bodoni_bold' !important;
-        background-color: pink !important;
         color: red !important;
       }
     }
   }
+}
+
+.img-wrapper {
+  margin: 10px 0;
+  img {
+    width: 100%;
+    height: auto !important;
+  }
+}
+
+app-singlefont {
+  width: 100%;
 }
