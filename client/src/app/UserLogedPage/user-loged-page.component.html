@@ -11,15 +11,6 @@
         </div>
         <button type="submit" (click)="getEmotion()">Submit watson</button>
       </form>
-      <div class="smallAnswer">
-        <h6>E.F.I.</h6>
-        <p> 1.   Anger: {{watsonAnswer.anger}}
-          <br> 2.   Fear: {{watsonAnswer.fear}}
-          <br> 3.   Happy: {{watsonAnswer.joy}}
-          <br> 4.   Analytical: {{watsonAnswer.analytical}}
-          <br> 5.   Confident: {{watsonAnswer.confident}}
-          <br> 6.   Tentative: {{watsonAnswer.tentative}}</p>
-      </div>
     </div>
     <div *ngIf="watsonIsAnswer" class="questions">
       <p> {{questions[current].question}} </p>
@@ -29,14 +20,14 @@
       <button type="submit" (click)="getAnswers(0.75)">75%</button>
       <button type="submit" (click)="getAnswers(1)">100%</button>
       <div class="smallAnswer">
-        <h6>EMOTIONAL FONT INDEX</h6>
-        <p> 1.   Anger: {{formAnswer[0]}}
-          <br> 2.   Fear: {{formAnswer[1]}}
-          <br> 3.   Happy: {{formAnswer[2]}}
-          <br> 4.   Analytical: {{formAnswer[3]}}
-          <br> 5.   Confident: {{formAnswer[4]}}
-          <br> 6.   Tentative: {{formAnswer[5]}}</p>
-      </div>
+          <h6>E.F.I.</h6>
+          <p> 1. Anger: Watson: {{watsonAnswer.anger}}, {{formAnswer[0]}}
+            <br> 2. Fear: Watson: {{watsonAnswer.fear}}, {{formAnswer[1]}}
+            <br> 3. Happy: Watson: {{watsonAnswer.joy}}, {{formAnswer[2]}}
+            <br> 4. Analytical: Watson: {{watsonAnswer.analytical}}, {{formAnswer[3]}}
+            <br> 5. Confident: Watson: {{watsonAnswer.confident}}, {{formAnswer[4]}}
+            <br> 6. Tentative: Watson: {{watsonAnswer.tentative}}, {{formAnswer[5]}}</p>
+        </div>
     </div>
     <div *ngIf="this.formAnswer.length===this.questions.length" class="answer">
       <h1>I would recommend first {{this.suitedArray[0][0]}} fontface</h1>
