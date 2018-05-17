@@ -9,7 +9,7 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: center; 
-    padding-top: 5%;    
+    padding-top: 0%;    
   }
 }
 
@@ -17,7 +17,7 @@
   font-family: 'impact';
   background-color: red;
   h1{
-    font-size: 20rem;
+    font-size: 20vw;
     color: yellow;
     letter-spacing: -9px;
   }
@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: center;
   h1{
-    font-size: 15rem;
+    font-size: 18vw;
     color: white;
   }
 }
@@ -42,7 +42,7 @@
   font-family: 'brown';
   background-color: greenyellow;
   h1{
-    font-size: 17rem;
+    font-size: 20vw;
     color: blue;
     letter-spacing: -9px;
   }
@@ -52,8 +52,9 @@
   font-family: 'unit';
   background-color: darkblue;
   h1{
-    font-size: 10rem;
+    font-size: 15vw;
     color: white;
+    letter-spacing: -0.5vw;
   }
 }
 
@@ -61,7 +62,7 @@
   font-family: 'haas';
   background-color: grey;
   h1{
-    font-size: 12vw;
+    font-size: 15vw;
     color: black;
   }
 }
@@ -70,7 +71,7 @@
   font-family: 'bauer_bodoni_bold';
   background-color: pink;
   h1{
-    font-size: 15rem;
+    font-size: 16vw;
     color: red;
   }
 }

@@ -35,9 +35,9 @@ export class SingleFontComponent implements OnInit {
     });
     this.route.params.subscribe(params =>{
       this.myEmotion = params['emotion'];
-      this.renderer.removeClass(document.body, this.myEmotion);
       this.sessionS.myEmotion = this.myEmotion;
     })  
+    this.renderer.removeClass(document.body, this.myEmotion);
     this.renderer.addClass(document.body, this.myEmotion);
   }  
 }

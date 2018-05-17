@@ -1,1 +1,51 @@
 
+.show-login-btn{
+  background-color: black;
+  color: white;
+}
+button {
+  margin-top: 25px;
+  color: white;
+  background-color: black;
+  font-family: arial;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 20px 20px;
+  width: 400px;
+
+}
+button:hover {
+ background-color: white;
+ color: black;
+}
+
+button:active {
+background-color: white;
+box-shadow: 0 5px white;
+transform: translateY(4px);
+color: black;
+}
+
+ .textarea {
+  background-color: black!important;
+  color: white;
+  padding: 1%;
+  outline: none;
+  border: 0px solid black;
+  box-shadow: 0;
+  text-align: center;
+  font-size: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  height: 100px;
+  background-color: black;
+  margin-top: 20px;
+  -webkit-box-shadow: 255 255 255 black inset;
+  -webkit-text-fill-color: black !important;
+}
+input:-webkit-autofill{
+  background-color: black !important;
+}
