@@ -33,7 +33,7 @@
     <div *ngIf="this.formAnswer.length===this.questions.length" class="answer">
       <h1>I would recommend first  <span>{{this.suitedArray[0][0]}}</span> fontface</h1>
       <h1>I would recommend second <span>{{this.suitedArray[1][0]}}</span> fontface</h1>
-      <button [routerLink]="['/font/', this.idFont, myEmotion]">show me a font</button>
+      <button id="show-font" [routerLink]="['/font/', this.idFont, myEmotion]">show me a font</button>
     </div>
   </div>
   <!-- <my-notlogged-component></my-notlogged-component> -->

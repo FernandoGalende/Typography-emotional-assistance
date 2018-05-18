@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from "@angular/core";
+import { Component, OnInit, Renderer2, OnDestroy } from "@angular/core";
 import { SessionService } from "./../Services/session.service";
 import { QuestionsService } from "../Services/questions.service";
 import { WatsonService } from "../Services/watson.service";
@@ -17,7 +17,7 @@ const BASEURL = "http://localhost:3000";
   templateUrl: "./user-loged-page.component.html",
   styleUrls: ["./user-loged-page.component.scss"],
 })
-export class UserLogedPage implements OnInit {
+export class UserLogedPage implements OnInit, OnDestroy {
   myEmotion:string;
 
   questions: Array<QuestionInterface>;
@@ -59,13 +59,16 @@ export class UserLogedPage implements OnInit {
     private renderer: Renderer2
   ) {}
 
+  ngOnDestroy() {
+      this.renderer.removeClass(document.body, this.session.myEmotion);
+  }
   ngOnInit() {
     this.session.isLogged().subscribe(u => (this.user = u));
     this.questionS.getQuestions().subscribe(data => {
       this.questions = data;
     });
     this.fontS.getFonts().subscribe((data) => this.fonts = data)
-    this.renderer.removeClass(document.body, this.session.myEmotion);
+    // this.renderer.removeClass(document.body, this.session.myEmotion);
     this.renderer.addClass(document.body, this.session.myEmotion);
   }
 
