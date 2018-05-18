@@ -29,17 +29,18 @@ color: black;
 }
 
 input:-webkit-autofill, .textarea {
-  background-color: black!important;
-  color: white;
+  width: 400px;
+  height: 60px;
   padding: 1%;
+  background-color: white!important;
+  border-radius: 25px;
+  color: white;  
   outline: none;
   border: 0px solid black;
   box-shadow: 0;
   text-align: center;
   font-size: 50px;
-  line-height: 50px;
-  overflow: hidden;
-  height: 100px;
+  overflow: hidden; 
   background-color: black;
   margin-top: 20px;
   -webkit-box-shadow: 255 255 255 black inset;

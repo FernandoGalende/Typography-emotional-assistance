@@ -23,8 +23,7 @@ export class SingleProjectComponent implements OnInit {
     this.route.params.subscribe(params => {
       console.log(params["id"])
       this.fontInUseS.getOneUse(params["id"]).subscribe(data => {
-        //console.log(data);
-        this.case = data;
+          this.case = data;        
       });
     });
   }

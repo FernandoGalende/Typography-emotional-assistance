@@ -22,7 +22,7 @@
 
 <div *ngIf="font">
   <div class="container font-info">
-    <h2>{{font.name}}</h2>  
+    <h1>{{font.name}}</h1>  
     <p>{{font.year}}</p>
     <h3>{{font.designer}}</h3>
     <p>{{font.info}}</p>
@@ -34,7 +34,7 @@
           <a [routerLink]="['/font/case/use', e.id]">
             <img src="{{e.thumb}}" alt="" width="350" height="auto">
           </a>
-          <h5> {{e.name}} </h5>
+          <h5 class="title"> {{e.name}} </h5>
         </div>
       </div>
     </div>
