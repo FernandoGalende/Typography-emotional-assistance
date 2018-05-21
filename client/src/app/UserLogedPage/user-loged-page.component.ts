@@ -32,6 +32,8 @@ export class UserLogedPage implements OnInit, OnDestroy {
     tentative: 0
   };
 
+  k: Array<string> = Object.keys(this.watsonAnswer);
+
   formAnswer: Array<number> = [];
   current: number = 0;
   title: String;
@@ -60,41 +62,38 @@ export class UserLogedPage implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.renderer.removeClass(document.body, this.session.myEmotion);
   }
+
   ngOnInit() {
     this.session.isLogged().subscribe(u => (this.user = u));
     this.questionS.getQuestions().subscribe(data => {
       this.questions = data;
     });
     this.fontS.getFonts().subscribe(data => (this.fonts = data));
-    // this.renderer.removeClass(document.body, this.session.myEmotion);
     this.renderer.addClass(document.body, this.session.myEmotion);
   }
 
   getEmotion() {
     this.watsonIsAnswer = true;
     this.watsonS.getEmotion(this.info).subscribe(data => {
-      this.watsonAnswer.anger = data.anger;
-      this.watsonAnswer.fear = data.fear;
-      this.watsonAnswer.joy = data.joy;
-      this.watsonAnswer.analytical = data.analytical;
-      this.watsonAnswer.confident = data.confident;
-      this.watsonAnswer.tentative = data.tentative;
+      for (let i = 0; i < this.k.length; i++) {
+        this.watsonAnswer[this.k[i]] = data[this.k[i]];
+      }
     });
   }
 
   getAnswers(ans) {
     this.formAnswer.push(ans);
     if (this.formAnswer.length === this.questions.length && this.watsonAnswer) {
-      let k = Object.keys(this.userEmotion);
       for (let i = 0; i < this.formAnswer.length; i++) {
-        this.userEmotion[k[i]] =
-          (this.formAnswer[i] + Number(this.watsonAnswer[k[i]])) / 2;
+        this.userEmotion[this.k[i]] =
+          (this.formAnswer[i] + Number(this.watsonAnswer[this.k[i]])) / 2;
       }
       this.mostSuitedFont(this.userEmotion);
     } else {
       this.current++;
     }
   }
+
   currentEmotion(emotions) {
     var myArray = [];
     for (var key in emotions) {
@@ -105,9 +104,9 @@ export class UserLogedPage implements OnInit, OnDestroy {
     });
     return myArray[0][0];
   }
+
   mostSuitedFont(userEmotion) {
     this.myEmotion = this.currentEmotion(userEmotion);
-
     for (var key in this.fonts) {
       for (var item in this.fonts[key].emotions) {
         if (item === this.myEmotion) {
