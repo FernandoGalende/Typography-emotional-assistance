@@ -10,7 +10,7 @@ const questions = [{
   emotion: "anger"
   },
   {
-  question: "How much fear you should express from 0 to 100?",
+  question: "How much darkness you should express from 0 to 100?",
   items: [],
   emotion: "fear",
   },

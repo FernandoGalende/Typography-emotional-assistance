@@ -25,10 +25,10 @@
   button {
     color: white;
     background-color: black;
-    font-family: arial;
+    font-family: 'brown';
     font-size: 10px;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     border: 1px solid white;
     border-radius: 25px;
     padding: 0 20px;
@@ -36,6 +36,7 @@
  button:hover {
    background-color: white;
    color: black;
+   -webkit-transition: background-color 1s;   
   }
 
 button:active {
@@ -87,15 +88,15 @@ button:active {
   text-align: center;
   font-size: 1.5vw;
   span{
-    text-transform: uppercase;
+    text-transform: lowercase;
   }
   button {
     color: white;
     background-color: black;
-    font-family: arial;
+    font-family: 'brown';
     font-size: 10px;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     margin-top: 100px;
     border: 1px solid white;
     border-radius: 25px;
@@ -104,6 +105,8 @@ button:active {
   button:hover {
     background-color: white;
     color: black;
+    -webkit-transition: color 1s;       
+
  
    }
  

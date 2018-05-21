@@ -107,8 +107,8 @@ body {
     color: yellow !important;
   }
   button:hover {
-    background-color: white;
-    color: red;
+    -webkit-transition: color 1s;   
+     color: red;
   }
   button:active {
     background-color: white;
@@ -158,6 +158,8 @@ body {
   button:hover {
     background-color: white !important;
     color: black !important;
+    -webkit-transition: color 1s!important;   
+
   }
   button:active {
     background-color: white !important;
@@ -207,6 +209,8 @@ body {
   button:hover {
     background-color: white !important;
     color: blue !important;
+    -webkit-transition: background-color 1s!important;   
+
   }
   button:active {
     background-color: white !important;
@@ -256,6 +260,8 @@ body {
   button:hover {
     background-color: white !important;
     color: darkblue !important;
+    -webkit-transition: background-color 1s!important;   
+
   }
   button:active {
     background-color: white !important;
@@ -305,6 +311,7 @@ body {
   button:hover {
     background-color: white !important;
     color: black !important;
+    -webkit-transition: background-color 1s!important;  
   }
   button:active {
     background-color: white !important;
@@ -354,6 +361,8 @@ body {
   button:hover {
     background-color: red !important;
     color: pink !important;
+    -webkit-transition: background-color 1s!important;  
+
   }
   button:active {
     background-color: pink !important;
