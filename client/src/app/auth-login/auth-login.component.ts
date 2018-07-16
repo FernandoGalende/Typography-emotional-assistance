@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { SessionService } from "../Services/session.service";
 import { Router } from "@angular/router"
-import { logging } from "selenium-webdriver";
 
 
 @Component({

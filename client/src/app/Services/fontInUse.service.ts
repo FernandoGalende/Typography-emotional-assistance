@@ -15,7 +15,6 @@ export class FontInUseService {
   constructor(private http: Http) {}
 
   getFontInUse(info) {
-    console.log(info);
     return this.http
       .post(`${BASEURL}/api/uses`, { info }, this.options)
       .map((res: Response) => {

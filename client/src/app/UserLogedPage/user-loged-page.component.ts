@@ -7,7 +7,6 @@ import { QuestionInterface } from "../interfaces/question-interface";
 import { Emotion } from "../interfaces/emotions-interface";
 import { FontsService } from "../Services/fonts.service";
 import { FontInterface } from "../interfaces/font-Interface";
-let _ = require("lodash");
 
 const BASEURL = "http://localhost:3000";
 

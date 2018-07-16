@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const questionSchema = require('../models/question');
-const dbURL = process.env.DBURL;
+
 
 
 const questions = [{
@@ -37,8 +37,8 @@ const questions = [{
 ];
 
 mongoose
-  .connect(process.env.DBURL)
-  .then(() => {
+.connect('mongodb://FernandoGalende:Chopera14@ds141264.mlab.com:41264/aurelio2')
+.then(() => {
     questionSchema.collection.drop()
     questionSchema.create(questions)
       .then(() => {

@@ -37,8 +37,6 @@ authController.post("/signup", (req, res, next) => {
       name
     });
 
-    console.log(newUser);
-
     newUser.save((err) => {
       if (err) {
         res.status(400).json({
@@ -68,21 +66,13 @@ authController.post("/login", (req, res, next) => {
     }
 
     req.login(user, (err) => {
-      console.log("ERROR ======>>>>>", err)
-      if (err) {
-        // return res.status(500).json({
-        //   message: "Something went wrong"
-        // });
+      if (err) {     
         return next(err);
       }
       return res.status(200).json(req.user);
     });
   })(req, res, next);
 });
-
-
-
-
 
 authController.get("/logout", (req, res) => {
   req.logout();
@@ -100,10 +90,6 @@ authController.get("/loggedin", (req, res) => {
   });
 });
 
-// authController.get("/private", (req, res) => {
-//   if (req.isAuthenticated()) { return res.json({ message: req.user.secret }); }
-//   return res.status(403).json({ message: "Unauthorized" });
-// });
 
 
 module.exports = authController;

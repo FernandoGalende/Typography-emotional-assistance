@@ -22,7 +22,6 @@ const simpleCrud = Model => {
 
   // Retrive DETAIL
   router.get("/:id", (req, res, next) => {
-    console.log("holaaaa router back")
     Model.findById(req.params.id)
       .then(object => res.json(object))
       .catch(e => next(e));

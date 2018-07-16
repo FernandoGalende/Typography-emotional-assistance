@@ -1,7 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const fontSchema = require('../models/font');
-const dbURL = process.env.DBURL;
 
 const fonts = [{
     name: "ll-brown",
@@ -97,7 +96,7 @@ const fonts = [{
 ];
 
 mongoose
-  .connect(process.env.DBURL)
+  .connect('mongodb://FernandoGalende:Chopera14@ds141264.mlab.com:41264/aurelio2')
   .then(() => {
     fontSchema.collection.drop()
     fontSchema.create(fonts)

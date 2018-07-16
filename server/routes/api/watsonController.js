@@ -32,13 +32,12 @@ watsonController.post("/", (req, res, next) => {
         result.joy = JSON.stringify(tone.document_tone.tone_categories[0].tones[3].score)
         result.analytical = JSON.stringify(tone.document_tone.tone_categories[1].tones[0].score)
         result.confident = JSON.stringify(tone.document_tone.tone_categories[1].tones[1].score)
-        result.tentative = JSON.stringify(tone.document_tone.tone_categories[1].tones[2].score)
+        result.tentative = JSON.stringify(tone.document_tone.tone_categories[2].tones[3].score)
+
         res.status(200).json(result);
       }
     }
   )
-
-
 });
 
 module.exports = watsonController;
