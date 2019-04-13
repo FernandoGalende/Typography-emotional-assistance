@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const questionSchema = require('../models/question');
-
+const Question = require('../models/question');
+const dbURL = process.env.DBURL;
 
 
 const questions = [{
@@ -36,13 +36,11 @@ const questions = [{
   }   
 ];
 
-mongoose
-.connect('mongodb://FernandoGalende:Chopera14@ds141264.mlab.com:41264/aurelio2')
-.then(() => {
-    questionSchema.collection.drop()
-    questionSchema.create(questions)
-      .then(() => {
-        mongoose.disconnect();
-      })
-      .catch(err => console.log(err))
-  });
+mongoose.connect(dbURL).then(() => {
+  Question.collection.drop()  
+  Question.create(questions).then(() => {
+    console.log("Question added to database");
+    mongoose.disconnect();
+  })
+  .catch(err => console.log(err))
+});

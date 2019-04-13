@@ -17,7 +17,7 @@ require("./config/passport")(passport);
 
 // Mongoose configuration
 const mongoose = require("mongoose");
-mongoose.connect(process.env.DBURL);
+mongoose.connect(process.env.DBURL, { useNewUrlParser: true });
 
 const whitelist = [
   'http://localhost:4200',

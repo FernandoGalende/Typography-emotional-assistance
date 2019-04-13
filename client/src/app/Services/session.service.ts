@@ -23,6 +23,7 @@ export class SessionService {
     return Observable.throw(e.json().message);
   }
   signup(user) {
+
     return this.http
       .post(`${BASEURL}/api/signup`, user, this.options)
       .map(res => res.json())
@@ -48,7 +49,6 @@ export class SessionService {
     return this.http
       .get(`${BASEURL}/api/logout`, this.options)
       .map(res => {
-        console.log(res)
         return this.handleUser()
       })
       .catch(this.handleError);

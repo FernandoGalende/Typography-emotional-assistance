@@ -4,7 +4,7 @@ const passport = require("passport");
 
 const User = require("../../models/user");
 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 authController.post("/signup", (req, res, next) => {
@@ -59,6 +59,7 @@ authController.post("/signup", (req, res, next) => {
 authController.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) {
+      console.log('refuseddddd')
       return next(err);
     }
     if (!user) {
@@ -66,7 +67,7 @@ authController.post("/login", (req, res, next) => {
     }
 
     req.login(user, (err) => {
-      if (err) {     
+      if (err) {
         return next(err);
       }
       return res.status(200).json(req.user);

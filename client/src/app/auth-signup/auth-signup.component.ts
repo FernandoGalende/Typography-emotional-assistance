@@ -22,7 +22,7 @@ export class AuthSignupComponent implements OnInit {
     const user = {
       username: this.username,
       password: this.password,
-      name: this.name,
+      name: this.username,
       // secret: this.secret
     };
     this.session.signup(user).subscribe(user=>{

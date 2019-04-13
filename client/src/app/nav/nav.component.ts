@@ -16,7 +16,6 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.session.isLogged().subscribe(user => {
       this.user = user;
-      console.log("USER EVENT");
       if (this.user) {
         this.title = `Feel free to express ${user.username}`;
       } else {

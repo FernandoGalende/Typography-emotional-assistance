@@ -4,13 +4,10 @@ const axios = require('axios');
 const ApiFont = require('../../models/apifont');
 const ApiFontUse = require('../../models/apifontUse');
 
-
-const initialUrl = 'https://fontsinuse.com/api/1/uses.json?family='
-const finalUrl = '&category=graphic-design&count=4&page=1&sort=alpha&order=desc&api_key=cf9cf1f118dc2c447c93172744fb9f38&app_name=fernando-galende'
-const initialIdUrl = 'https://fontsinuse.com/api/1/uses/'
-const finalIdUrl= '.json?api_key=cf9cf1f118dc2c447c93172744fb9f38&app_name=fernando-galende'
-
-const _ = require('lodash');
+const initialUrl = process.env.initialUrl
+const finalUrl = process.env.finalUrl
+const initialIdUrl = process.env.initialIdUrl
+const finalIdUrl= process.env.finalIdUrl
 
 // Create uses
 router.post("/", (req, res, next) => {
@@ -31,12 +28,10 @@ router.post("/", (req, res, next) => {
 // Create use images
 router.get("/use/:id", (req, res, next) => {  
   const id = req.params.id; 
-  console.log(id)
   ApiFontUse.findOne({id: id}).then( one => {
     if (one !== null) return res.status(200).json(one);
     else { 
       axios.get(initialIdUrl + id + finalIdUrl).then(one => {       
-        // console.log(initialIdUrl + id + finalIdUrl)
         let newApiFontUse = {id:id, use: one.data.uses}
         new ApiFontUse(newApiFontUse).save().then(font => {                      
           res.status(200).json(font);
