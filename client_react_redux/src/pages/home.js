@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 //Components
 
 export class Home extends Component {
-
 	renderUser(){
 	return <small> user</small>
 	}
