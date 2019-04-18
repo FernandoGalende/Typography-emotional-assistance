@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for react phone app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "start-debug": "nodemon --inspect=0.0.0.0:9229 ./app.js",
+    "docker": "node --experimental-modules ./signal-server",
+    "docker-build": "docker build -t node-web-development/signalauth ."
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^11.12.0",
+    "express": "^4.16.4",
+    "cors": "^2.8.5",
+    "nodemon": "^1.18.10"
+  }
+}
