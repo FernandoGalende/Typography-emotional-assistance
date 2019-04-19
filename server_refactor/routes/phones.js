@@ -1,7 +1,8 @@
 const phonesData = require('../assets/phone-data.json')
+const Font = require('../models/font')
 
-function getListOfPhones (req, res) {
-  res.status(200).send(JSON.stringify(phonesData))
+function getListOfFonts (req, res) {
+  Font.find().then(objects => res.status(200).json(objects))
 }
 
 function getSinglePhone (req, res, next) {
@@ -17,4 +18,7 @@ function getSinglePhone (req, res, next) {
   res.status(200).send(JSON.stringify(data))
 }
 
-module.exports = { getListOfPhones, getSinglePhone }
+module.exports = {
+  getSinglePhone,
+  getListOfFonts
+}

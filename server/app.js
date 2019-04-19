@@ -8,7 +8,7 @@ const cors = require("cors");
 const session = require("express-session");
 const passport = require("passport");
 
-const app            = express();
+const app  = express();
 
 // Passport configuration
 require("./config/passport")(passport);

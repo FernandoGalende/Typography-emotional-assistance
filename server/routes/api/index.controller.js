@@ -8,8 +8,6 @@ const authRoutes = require('./authController');
 const watsonRoutes = require('./watsonController');
 const usesRoutes = require('./usesController');
 
-
-
 router.use('/font', require('./crud')(Font));
 router.use('/font/:id', require('./crud')(Font));
 router.use('/question', require('./crud')(Question));
