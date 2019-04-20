@@ -1,4 +1,4 @@
-const phonesData = require('../assets/phone-data.json')
+const phonesData = require('../../assets/phone-data.json')
 const Font = require('../models/font')
 
 function getListOfFonts (req, res) {

@@ -4,8 +4,8 @@
   "description": "backend for react phone app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./entrypoint.js",
-    "start-debug": "nodemon --trace-sync-io --inspect=0.0.0.0:9229 --legacy-watch --watch ./ ./entrypoint.js",
+    "start": "nodemon src/entrypoint.js",
+    "start-debug": "nodemon --trace-sync-io --inspect=0.0.0.0:9229 --legacy-watch --watch ./ src/entrypoint.js",
     "docker": "node --experimental-modules ./signal-server",
     "docker-build": "docker build -t node-web-development/signalauth .",
     "lint": "standard"

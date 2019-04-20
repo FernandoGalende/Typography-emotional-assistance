@@ -3,15 +3,15 @@ services:
   backend:
     container_name: backend
     restart: always
-    build: .
+    build: server_refactor
     ports:
       - "3000:3000"
       - "9229:9229"
     env_file:
-     - ./dev.env
+     - server_refactor/dev.env
     command: [ "npm", "run", "start-debug" ]
     volumes:
-      - .:/app
+      - ./server_refactor:/app
       - ./logs:/app/logs
       - /app/node_modules
     depends_on:
@@ -20,3 +20,12 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+  frontend:
+    container_name: frontend
+    restart: always
+    build: client_react_redux
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./client_react_redux:/app
+      - /app/node_modules
