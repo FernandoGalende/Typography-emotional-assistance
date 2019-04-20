@@ -1,6 +1,6 @@
-const config = require('../utilities/config')
+const config = require('../src/utilities/config')
 const mongoose = require('mongoose')
-const fontSchema = require('../models/font')
+const fontSchema = require('../src/models/font')
 const dbURL = config.dbURL
 
 const fonts = [{
