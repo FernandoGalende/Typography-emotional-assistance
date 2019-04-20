@@ -3,6 +3,7 @@ const logger = require('morgan')
 const routes = require('./routes/routes.js')
 const cors = require('cors')
 const config = require('./utilities/config')
+const errorHandler = require('./utilities/errorHandler')
 
 const mongoose = require('mongoose')
 mongoose.connect(config.dbURL, { useNewUrlParser: true })
@@ -14,12 +15,7 @@ app.use(cors())
 
 routes(app)
 
-app.use(function (err, req, res, next) {
-  if (err.status) {
-    res.status(err.status)
-      .send(`error: ${err.message}`)
-  }
-  res.status(500).send(`unknown error`)
-})
+// error handler
+app.use(errorHandler)
 
 module.exports = app
