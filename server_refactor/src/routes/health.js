@@ -1,5 +1,8 @@
-function health (req, res, next) {
-  res.status(200).send('Everything is ok in backend side')
-}
+const express = require('express')
+const router = express.Router()
 
-module.exports = { health }
+router.get('/', (req, res, next) => {
+  res.status(200).send('Everything is ok in backend side')
+})
+
+module.exports = router

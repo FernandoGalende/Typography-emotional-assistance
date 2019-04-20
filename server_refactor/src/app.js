@@ -1,9 +1,9 @@
 const express = require('express')
 const logger = require('morgan')
-const routes = require('./routes/routes.js')
 const cors = require('cors')
 const config = require('./utilities/config')
 const errorHandler = require('./utilities/errorHandler')
+const { health, fontRoutes } = require('./routes')
 
 const mongoose = require('mongoose')
 mongoose.connect(config.dbURL, { useNewUrlParser: true })
@@ -13,7 +13,8 @@ app.use(logger('dev'))
 
 app.use(cors())
 
-routes(app)
+app.use('/health', health)
+app.use('/font', fontRoutes)
 
 // error handler
 app.use(errorHandler)
