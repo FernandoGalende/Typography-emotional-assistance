@@ -14,10 +14,9 @@ services:
       - .:/app
       - ./logs:/app/logs
       - /app/node_modules
-    links:
+    depends_on:
       - mongo
   mongo:
-    container_name: mongo
     image: mongo
     ports:
       - "27017:27017"
