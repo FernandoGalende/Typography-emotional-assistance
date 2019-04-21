@@ -21,9 +21,9 @@ watsonController.post("/", (req, res, next) => {
   let { info } = req.body
 
   toneAnalyzer.tone({
-      tone_input: info,
-      content_type: 'text/plain'
-    },
+    tone_input: info,
+    content_type: 'text/plain'
+  },
     function (err, tone) {
       if (err) console.log(err);
       else {
@@ -40,4 +40,4 @@ watsonController.post("/", (req, res, next) => {
   )
 });
 
-module.exports = watsonController;
+module.exports = watsonController

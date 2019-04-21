@@ -24,6 +24,7 @@
     "morgan": "^1.9.1",
     "node": "^11.12.0",
     "nodemon": "^1.18.11",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "watson-developer-cloud": "^4.0.1"
   }
 }
