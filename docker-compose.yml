@@ -3,15 +3,15 @@ services:
   backend:
     container_name: backend
     restart: always
-    build: server_refactor
+    build: server
     ports:
       - "3000:3000"
       - "9229:9229"
     env_file:
-     - server_refactor/dev.env
+     - server/dev.env
     command: [ "npm", "run", "start-debug" ]
     volumes:
-      - ./server_refactor:/app
+      - ./server:/app
       - ./logs:/app/logs
       - /app/node_modules
     depends_on:
