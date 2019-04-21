@@ -18,21 +18,21 @@ router.post('/', (req, res, next) => {
     tone_input: info,
     content_type: 'text/plain'
   },
-  (err, tone) => {
+  (err, tones) => {
     if (err) {
       next({
         status: err.code || 403,
         message: err.message
       })
     } else {
-      res.status(200).json(getCategoryPercents(tone))
+      res.status(200).json(getCategories(tones))
     }
   })
 })
 
-const getCategoryPercents = tone => {
+const getCategories = tones => {
   let result = {}
-  const category = tone['document_tone']['tone_categories']
+  const category = tones['document_tone']['tone_categories']
 
   result.anger = category[0].tones[0].score
   result.fear = category[0].tones[2].score
