@@ -1,8 +1,8 @@
-# React-Redux PHONE app backend
+# Typography Emotional Assistance app backend
 
 This projec is the backend side of phone react app developed by Fernando Aparcio Galende.
 This project was created with Node and Express.
-I use bulma to styles and customs styles was added to make the app responsive below 600px width.
+
 For unit testing I install jest & enzyme to ensure quality of the project.
 
 ## Getting Started
