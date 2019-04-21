@@ -32,3 +32,5 @@ npm-debug.log
 #old versions
 server_old/*
 client_old/*
+
+.DS_Store
