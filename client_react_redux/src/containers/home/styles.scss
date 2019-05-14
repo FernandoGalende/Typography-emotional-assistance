@@ -1,0 +1,45 @@
+.container{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+
+  .wrap{
+    text-align: center;
+    font-family: 'haas';
+  }
+}
+
+.line-1 {
+  position: relative;
+  margin: 0 auto;
+  border-right: 1px solid rgba(255, 255, 255, .75);
+  font-size: 90%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(0%);
+}
+
+.anim-typewriter {
+  animation: typewriter 3s steps(44) 1s 1 normal both, blinkTextCursor 1000ms steps(44) infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1000px;
+  }
+
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, .75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
