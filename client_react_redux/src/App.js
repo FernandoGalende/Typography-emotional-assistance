@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 //Components
-import  HomeContainer  from './containers/homeContainer'
+import  Home  from './containers/home/home'
 
 //Styles
 import './App.css';
@@ -12,7 +12,7 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<Switch>
-					<Route exact path='/' component={HomeContainer} />
+					<Route exact path='/' component={Home} />
 				</Switch>
 			</div>
 		);
