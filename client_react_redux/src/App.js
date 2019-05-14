@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import  Home  from './containers/home/home'
 
 //Styles
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 	render() {
