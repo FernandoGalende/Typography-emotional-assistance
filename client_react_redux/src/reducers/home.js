@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-  hasUser: false
+  hasUser: false,
+  userName: 'Fer'
 }
 
 export default function search(state = INITIAL_STATE, action) {
