@@ -13,7 +13,7 @@ export const fetchDataRejected = payload => ({
 })
 
 export const fetchWatson = payload => {
-	return (dispatch, getState) => {
+	return dispatch => {
 		const BASE_URL = process.env.REACT_APP_API_BASEURL;
 
 		const options = {
@@ -29,7 +29,6 @@ export const fetchWatson = payload => {
 			.then((res) => res.json())
 			.then((results) => {
 				dispatch(fetchDataFulFilled(results));
-
 			})
 			.catch((error) => {
 				dispatch(fetchDataRejected(error));
