@@ -1,4 +1,8 @@
 import { combineReducers } from 'redux';
-import home from './home';
+import { home } from './home';
+import { emotions } from './emotions';
 
-export default combineReducers({ home });
+export default combineReducers({
+  home,
+  emotions
+});
