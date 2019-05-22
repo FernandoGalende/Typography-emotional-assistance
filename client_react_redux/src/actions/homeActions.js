@@ -13,6 +13,7 @@ export const fetchDataRejected = payload => ({
 })
 
 export const fetchWatson = payload => {
+
 	return dispatch => {
 		const BASE_URL = process.env.REACT_APP_API_BASEURL;
 

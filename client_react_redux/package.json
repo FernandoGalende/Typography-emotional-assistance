@@ -11,7 +11,8 @@
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-devtools": "^3.5.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "PORT=4200 react-scripts start",

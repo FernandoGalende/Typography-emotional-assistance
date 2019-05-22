@@ -5,6 +5,7 @@ import './home.scss';
 import Cover from '../../components/Cover';
 import Input from '../../components/Input';
 
+
 export class Home extends Component {
 	constructor() {
 		super();
@@ -12,12 +13,16 @@ export class Home extends Component {
 	}
 
 	renderUser() {
-		return <small>user</small>;
+		return <small>{this.props.userName}</small>;
 	}
 
 	_handleResult(results) {
 		const data = { info: results }
 		this.props.fetchWatson( data );
+	}
+
+	componentDidUpdate () {
+		console.log('component', this.props.joyEmotion)
 	}
 
 	render() {
@@ -26,11 +31,11 @@ export class Home extends Component {
 			userName: this.props.userName
 		}
 
-
 		return (
 			<div className='home'>
 				<Cover user={ user }/>
 				<Input onResult={this._handleResult}/>
+				{this.renderUser()}
 			</div>
 		);
 	}

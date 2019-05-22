@@ -1,3 +1,5 @@
+import { createSelector } from 'reselect';
+
 const INITIAL_STATE = {
   emotionalResults: {},
   fetchStatus: ''
@@ -22,3 +24,5 @@ export const emotions = (state = INITIAL_STATE, action) => {
 			return state;
 	}
 }
+
+export const getJoyEmotion = createSelector(state => state.emotionalResults && state.emotionalResults.joy, joy => joy);
