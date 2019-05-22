@@ -12,11 +12,19 @@ export default function search(state = INITIAL_STATE, action) {
 				hasUser: !state.hasUser,
 			};
 
-		case 'UPDATE_EMOTIONAL_RESULTS':
+		case 'FETCH_DATA_FULFILLED':
 			return {
 				...state,
-				emotionalResults: action.results,
+				emotionalResults: action.payload,
+				fetchStatus: 'success'
 			};
+
+		case 'FETCH_DATA_REJECTED': {
+				return {
+					...state,
+					fetchStatus: `failed with error: ${action.payload}`,
+				};
+			}
 
 		default:
 			return state;

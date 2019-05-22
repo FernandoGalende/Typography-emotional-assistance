@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		toggleUser: () => dispatch(actions.toggleUserAction()),
-		emotionalRestuls: results => dispatch(actions.updateEmotionalResults(results)),
 		fetchWatson: data => dispatch(actions.fetchWatson(data))
 	};
 };
