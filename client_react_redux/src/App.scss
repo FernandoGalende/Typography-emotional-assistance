@@ -2,15 +2,33 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.grid-container {
+  display: grid;
+  grid-template-columns: 183px 183px repeat(10, 1fr);
+  grid-template-rows: 80px repeat(7, 1fr);
+  grid-template-areas:
+  'navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar'
+  'content content content content content content content content content content content content'
+  'content content content content content content content content content content content content'
+  'content content content content content content content content content content content content'
+  'content content content content content content content content content content content content'
+  'content content content content content content content content content content content content'
+  'content content content content content content content content content content content content'
+  'content content content content content content content content content content content content';
+  height: 100vh;
+}
+
+.navbar {
+  grid-area: navbar;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.home {
+  grid-area: content;
+  background-color: red;
 }
 
 .line-1 {
