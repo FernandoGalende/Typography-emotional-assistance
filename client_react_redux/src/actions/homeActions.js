@@ -1,3 +1,8 @@
+export const Types = {
+	GET_WATSON_EMOTIONS: 'watson/get_watson_request',
+	GET_WATSON_ERROR: 'watson/get_watson_error'
+};
+
 export const toggleUserAction = () => ({
 	type: 'TOGGLE_USER'
 });
@@ -12,27 +17,12 @@ export const fetchDataRejected = payload => ({
 	payload
 })
 
-export const fetchWatson = payload => {
+export const fetchWatson = ({ info }) => ({
+	type: Types.GET_WATSON_EMOTIONS,
+	payload: { info }
+});
 
-	return dispatch => {
-		const BASE_URL = process.env.REACT_APP_API_BASEURL;
-
-		const options = {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
-			},
-			body: JSON.stringify(payload),
-		};
-
-		return fetch(`${BASE_URL}/watson`, options)
-			.then((res) => res.json())
-			.then((results) => {
-				dispatch(fetchDataFulFilled(results));
-			})
-			.catch((error) => {
-				dispatch(fetchDataRejected(error));
-			});
-	};
-};
+export const watsonError = error => ({
+	type: Types.GET_WATSON_ERROR,
+	error
+});

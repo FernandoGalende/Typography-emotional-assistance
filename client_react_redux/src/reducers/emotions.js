@@ -8,6 +8,7 @@ const INITIAL_STATE = {
 export const emotions = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case 'FETCH_DATA_FULFILLED': {
+			console.log(action)
 			return {
 				...state,
 				emotionalResults: action.payload,
