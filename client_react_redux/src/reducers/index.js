@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { home } from './home';
+import { user } from './user';
 import { createSelector } from 'reselect';
 import { emotions, getJoyEmotion as _getJoyEmotion  } from './emotions';
 
 export default combineReducers({
-  home,
+  user,
   emotions
 });
 

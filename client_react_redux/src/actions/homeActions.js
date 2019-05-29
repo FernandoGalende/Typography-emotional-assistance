@@ -1,19 +1,17 @@
-export const Types = {
-	GET_WATSON_EMOTIONS: 'watson/get_watson_request',
-	GET_WATSON_ERROR: 'watson/get_watson_error'
-};
+import { Types } from '../constants'
+
 
 export const toggleUserAction = () => ({
-	type: 'TOGGLE_USER'
+	type: Types.TOGGLE_USER
 });
 
 export const fetchDataFulFilled = payload => ({
-	type: 'FETCH_DATA_FULFILLED',
+	type: Types.FETCH_DATA_FULFILLED,
 	payload,
 });
 
 export const fetchDataRejected = payload => ({
-	type: 'FETCH_DATA_REJECTED',
+	type: Types.FETCH_DATA_REJECTED,
 	payload
 })
 

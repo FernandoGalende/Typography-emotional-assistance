@@ -4,9 +4,9 @@ import { Home } from '../pages/Home';
 import { getJoyEmotion } from './../reducers'
 
 const mapStateToProps = (state) => ({
-	hasUser: state.home.hasUser,
-	userName: state.home.userName,
-	watsonResults: state.home.emotionalResults,
+	hasUser: state.user.hasUser,
+	userName: state.user.userName,
+	watsonResults: state.emotions.emotionalResults,
 	joyEmotion: getJoyEmotion(state.emotions)
 });
 
